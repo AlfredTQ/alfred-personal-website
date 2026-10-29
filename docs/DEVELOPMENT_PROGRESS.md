@@ -1,5 +1,5 @@
 # Progress (29 October 2026)
-Completed: responsive single-page website; semantic navigation and mobile menu; hero; about; four expertise cards; three credential entries marked verification pending; LinkedIn/GitHub links; validated mailto inquiry form; static project documentation; visible keyboard focus indicators; Escape-key mobile-menu dismissal; local Git repository initialized.
+Completed: responsive Next.js App Router home page; semantic navigation and mobile menu; hero; about; four capability cards; explicitly labelled work placeholders; three credential entries marked verification pending; LinkedIn/GitHub links; validated mailto inquiry form; visible keyboard focus indicators; 404 and application error pages; Vitest component/page coverage; production build verification; local Git repository initialized.
 
 Not completed: live deployment; official certification verification; actual form backend and spam protection; professional photo; approved portfolio case studies; SEO preview/OG image; domain; browser/device QA; production accessibility/security testing. Do not mark these complete without evidence.
 

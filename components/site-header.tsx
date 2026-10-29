@@ -1,0 +1,19 @@
+'use client';
+
+import Link from 'next/link';
+import { useState } from 'react';
+import { Logo } from './logo';
+
+const links = [['About', '#about'], ['Capabilities', '#capabilities'], ['Credentials', '#credentials']];
+
+export function SiteHeader() {
+  const [open, setOpen] = useState(false);
+  return <header className="site-header"><div className="shell nav-wrap">
+    <Logo />
+    <button className="menu-button" aria-expanded={open} aria-controls="primary-nav" onClick={() => setOpen(!open)}><span className="sr-only">Toggle menu</span><i /><i /></button>
+    <nav id="primary-nav" data-open={open} aria-label="Primary navigation">
+      {links.map(([label, href]) => <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>)}
+      <Link className="nav-cta" href="#contact" onClick={() => setOpen(false)}>Start a conversation <span>↗</span></Link>
+    </nav>
+  </div></header>;
+}
