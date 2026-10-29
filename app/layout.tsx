@@ -5,6 +5,11 @@ import './fonts.css';
 import './premium.css';
 import './interim.css';
 import './live.css';
+import './reference-style.css';
+import './profile.css';
+import './full-hero.css';
+import './routes.css';
+import './readability.css';
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,

@@ -1,0 +1,19 @@
+body { font-size: 18px; }
+nav { font-size: 15px; }
+.eyebrow, .section-label { font-size: 12px; letter-spacing: 1.5px; }
+.lede, .page-lede { font-size: 18px; line-height: 1.8; }
+.button { font-size: 15px; }
+.text-action, .availability, .hero-proof { font-size: 13px; }
+.section-top > p, .service-card p, .intro-grid p, .credentials-copy, .work-intro > div, .contact-copy > p:not(.section-label) { font-size: 16px; }
+.service-card small, .route-service > span, .route-service small, .route-status, .work-status { font-size: 12px; }
+.credential h3, .credentials-list h3 { font-size: 17px; }
+.credential p, .credentials-list p { font-size: 13px; }
+.credential-status, .credentials-list small { font-size: 11px; }
+.contact-form label { font-size: 13px; }
+.form-note, .form-notice { font-size: 12px; }
+.preview-tabs button, .preview-label, .preview-footer { font-size: 11px; }
+.preview-profile span { font-size: 12px; }.preview-profile strong { font-size: 11px; }.preview-profile small { font-size: 9px; }
+.route-service p, .route-note, .route-credential p { font-size: 15px; }
+.route-credential > span { font-size: 12px; }.route-credential small { font-size: 11px; }
+.footer p, .footer a { font-size: 13px; }
+@media (max-width: 800px) { body { font-size: 17px; }.eyebrow, .section-label { font-size: 11px; }.lede, .page-lede { font-size: 17px; }.preview-tabs button { font-size: 10px; }.preview-footer { font-size: 10px; } }

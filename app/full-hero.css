@@ -1,0 +1,5 @@
+.hero { width: 100%; max-width: none; min-height: calc(100svh - 78px); }
+.reference-hero-media { min-height: calc(100svh - 78px); }
+.section, .work-section, .contact-section { min-height: 100svh; display: flex; align-items: center; }
+.section > .shell, .work-section > .shell, .contact-section > .shell { width: 100%; }
+@media (max-width: 800px) { .hero { min-height: auto; }.hero-copy { min-height: calc(100svh - 67px); }.reference-hero-media { min-height: 510px; } }
