@@ -1,0 +1,2 @@
+'use client';
+export default function GlobalError({ reset }: { error: Error & { digest?: string }; reset: () => void }) { return <html lang="en"><body><main className="error-page"><p className="section-label">Service interruption</p><h1>Let’s find<br /><em>the thread again.</em></h1><p>This experience is temporarily unavailable. Please try again in a moment.</p><button className="button button-blue" onClick={reset}>Try again <span>↻</span></button></main></body></html>; }

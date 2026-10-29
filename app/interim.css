@@ -1,0 +1,5 @@
+.work-cta { display: inline-flex; gap: 12px; margin-top: 31px; border-bottom: 1px solid var(--lime); color: #fff; padding-bottom: 7px; font-size: 13px; font-weight: 800; transition: color .2s ease, transform .2s ease; }
+.work-cta span { color: var(--lime); }.work-cta:hover { color: var(--lime); transform: translateX(3px); }
+.work-card.large .image-fallback { background: radial-gradient(circle at 74% 20%, #5c83db 0 4%, transparent 4.5%), linear-gradient(126deg, #426397, #1b2e4b 63%); }
+.work-card:not(.large) .image-fallback { background: linear-gradient(145deg, #263b5d 0 52%, #344f7d 52% 54%, #1a2d4a 54%); }
+.work-card .image-fallback::after { content: ''; width: 54%; height: 1px; background: #b2c7ff; opacity: .55; margin-top: 3px; }

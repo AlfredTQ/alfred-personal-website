@@ -35,6 +35,8 @@ npm run dev
 
 Then visit `http://localhost:3000`.
 
+Before deploying, set `NEXT_PUBLIC_SITE_URL` to the final canonical URL (for example, `https://your-domain.com`). It is used for canonical metadata, `robots.txt`, and `sitemap.xml`; it contains no secret.
+
 ## Production and tests
 
 ```bash
@@ -49,6 +51,7 @@ Vitest and Testing Library cover home-page rendering, its primary conversion rou
 
 - Edit services and credentials in `lib/content.ts`.
 - Replace work tile placeholders in `app/page.tsx` with approved assets from `public/`, then supply each image’s accurate `alt` text.
+- The interim work section is intentionally framed as a portfolio in preparation. Replace it with case studies only when real project facts and approved visuals are available.
 - Update contact and social URLs in `app/page.tsx` and `lib/content.ts`.
 - Add credential verification URLs only after official links are provided.
 
