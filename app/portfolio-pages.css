@@ -221,3 +221,19 @@
   .about-portrait-stage .about-person, .about-orbit { animation: none; }
   .principle-card, .capability-route-card { transition-delay: 0s; }
 }
+
+/* ---- Shared inner-page hero: one type scale, width and rhythm for every route. ---- */
+.route-hero { min-height: clamp(520px, 62svh, 680px); padding: clamp(70px, 8vw, 120px) 0; }
+.route-hero > .shell, .credentials-route-hero > .shell, .about-hero > .shell, .capability-route-hero > .shell { width: min(1320px, calc(100% - clamp(48px, 9vw, 160px))); }
+.route-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(40px, 6vw, 96px); align-items: center; }
+.route-hero-grid.has-aside { grid-template-columns: minmax(0, .95fr) minmax(360px, 1.05fr); }
+.route-hero h1 { max-width: 760px; margin: 18px 0 26px; font-family: var(--sans); font-size: clamp(54px, 6vw, 96px); font-weight: 850; letter-spacing: -.025em; line-height: .95; }
+.route-hero h1 em { font-style: normal; }
+.route-hero .page-lede { max-width: 540px; margin: 0 0 28px; }
+.credentials-route-hero h1, .about-hero-copy h1 { font-size: clamp(54px, 6vw, 96px); letter-spacing: -.025em; line-height: .95; }
+@media (max-width: 800px) {
+  .route-hero { min-height: 0; padding: 92px 0 76px; }
+  .route-hero > .shell, .credentials-route-hero > .shell { width: min(100% - 32px, 600px); }
+  .route-hero-grid.has-aside { grid-template-columns: 1fr; }
+  .route-hero h1, .credentials-route-hero h1, .about-hero-copy h1 { font-size: clamp(46px, 12.5vw, 68px); }
+}
