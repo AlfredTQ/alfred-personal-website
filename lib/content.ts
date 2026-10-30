@@ -1,10 +1,10 @@
 export const contactEmail = 'alfredtackiequaye@gmail.com';
 
 export const services = [
-  { number: '01', title: 'Graphic design', description: 'Visual identities and digital assets that make the message easy to see and remember.', tag: 'Visual clarity' },
-  { number: '02', title: 'UI/UX design', description: 'Interfaces shaped around real tasks, accessible patterns, and thoughtful interactions.', tag: 'Useful by design' },
-  { number: '03', title: 'Digital strategy', description: 'Content planning and campaign thinking for an organised, consistent digital presence.', tag: 'Made to connect' },
-  { number: '04', title: 'Data storytelling', description: 'Clear Power BI reporting and visual analysis that makes insight easier to act on.', tag: 'Evidence, visible' },
+  { number: '01', title: 'Brand & visual systems', description: 'Identity, campaign, and communication systems that help people recognise the message and trust what they see.', tag: 'Clarity people remember' },
+  { number: '02', title: 'UI/UX design', description: 'Digital journeys shaped around real tasks—clearer paths, calmer decisions, and experiences people can use with confidence.', tag: 'Useful by design' },
+  { number: '03', title: 'Digital strategy', description: 'A practical point of view on what to say, where to say it, and how each digital touchpoint should work together.', tag: 'Made to connect' },
+  { number: '04', title: 'Data storytelling', description: 'Power BI reports and visual analysis that turn complex information into an informed next step.', tag: 'Evidence, made useful' },
 ];
 
 export const credentials = [

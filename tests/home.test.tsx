@@ -6,15 +6,17 @@ import { SiteHeader } from '@/components/site-header';
 describe('Home page', () => {
   it('renders the primary message and an inquiry path', () => {
     render(<Home />);
-    expect(screen.getByRole('heading', { name: /ideas with direction/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /let’s work together/i })).toHaveAttribute('href', '#contact');
+    expect(screen.getByRole('heading', { name: /design clarity.*moves work forward/i })).toBeInTheDocument();
+    const conversationLinks = screen.getAllByRole('link', { name: /start a conversation/i });
+    expect(conversationLinks).toHaveLength(2);
+    expect(conversationLinks.find((link) => link.classList.contains('hero-contact-disc'))).toHaveAttribute('href', '/contact');
     expect(screen.getByRole('form')).toBeInTheDocument();
   });
 
-  it('sets honest expectations while case studies are in preparation', () => {
+  it('labels concept studies honestly while real case studies are in development', () => {
     render(<Home />);
-    expect(screen.getByText(/portfolio in preparation/i)).toBeInTheDocument();
-    expect(screen.getByText(/case studies in progress/i)).toBeInTheDocument();
+    expect(screen.getByText(/selected work/i)).toBeInTheDocument();
+    expect(screen.getByText(/concept studies.*real case studies coming next/i)).toBeInTheDocument();
   });
 });
 

@@ -1,48 +1,57 @@
-# Design QA — light SaaS reference-led home page
+**Comparison Target**
 
-## Comparison target
+- Source visual truth: `/Users/alfredtackie-quaye/Library/CloudStorage/OneDrive-eSolutionsConsultingGhana/Desktop/Screenshot 2026-10-30 at 8.06.25 AM.png` and `/Users/alfredtackie-quaye/Library/CloudStorage/OneDrive-eSolutionsConsultingGhana/Desktop/Screenshot 2026-10-30 at 7.53.41 AM.png` (user-supplied portfolio hero references).
+- Intended implementation route: `/`.
+- Target state: desktop hero at initial load.
+- Intended implementation viewport: desktop, 1819 × 1344 CSS px; density normalization was not performed because a browser-rendered implementation capture could not be obtained.
 
-- Source visual truth: `/Users/alfredtackie-quaye/Library/CloudStorage/OneDrive-eSolutionsConsultingGhana/Desktop/Screenshot 2026-10-29 at 4.57.13 PM.png`
-- Source evidence: user-provided screenshot inspected on 29 October 2026.
-- Implementation route: `/`
-- Intended viewport: desktop, 1440px-wide editorial landing page.
-- Intended state: initial page load.
+**Evidence**
 
-## Evidence status
+- Source visual was supplied in the conversation and reviewed before implementation.
+- Implementation screenshot: unavailable. `cua.getState()` reported: “Browsers: Error: The browser access host is unavailable.”
+- Build evidence: `npm test` passed (4 tests) and `npm run build` passed after the hero implementation.
+- Primary interactions intended for inspection: primary navigation, mobile menu, two hero CTAs, portrait hover, and reduced-motion behavior.
+- Console error check: blocked with the unavailable browser host.
 
-The reference was available as a web capture. A browser-rendered implementation screenshot could not be captured in this session because the available browser-access host was unavailable. The production build and unit tests passed, but they are not visual-comparison evidence.
+**Required Fidelity Surfaces**
 
-## Required fidelity surfaces
+- Fonts and typography: implemented as oversized editorial sans typography with high-contrast white copy and an orange accent word; visual comparison remains blocked.
+- Spacing and layout rhythm: implemented as a structured portfolio frame with an integrated navigation bar, left-led type, a right-side portrait, and a circular conversion cue; visual comparison remains blocked.
+- Colors and visual tokens: implemented with charcoal, amber, off-white, and orange conversion accents; visual comparison remains blocked.
+- Image quality and asset fidelity: Alfred’s portrait is layered over an original generated dark editorial studio background at `public/images/hero-editorial-studio.png`. Visual crop and edge verification remain blocked.
+- Copy and content: replaced reference security copy with Alfred’s design, experience, and data-storytelling content.
 
-- **Fonts and typography:** intentional approximation using a bold system UI sans-serif to match the screenshot’s strong product-launch hierarchy.
-- **Spacing and layout rhythm:** implemented as an airy centered text/image hero with a compact navigation and embedded product-preview panel.
-- **Colors and visual tokens:** adapted from the screenshot's white, pale-lilac, periwinkle, and cobalt palette while retaining Alfred's own content.
-- **Image quality and asset fidelity:** an original AI-generated ambient image is used at `public/images/portfolio-saas-ambient.png`. It is not copied from the reference and contains no logo or text.
-- **Copy and content:** all real-estate claims, metrics, names, and calls to action from the reference were excluded. Alfred's portfolio copy and pending-credential framing are preserved.
+**Findings**
 
-## Findings
+- [P1] Rendered fidelity cannot be verified.
+  Location: home hero `/`.
+  Evidence: browser capture is unavailable, so the rendered output cannot be compared beside the reference at a normalized viewport.
+  Impact: portrait scale, glass-card overlap, typography wrapping, and responsive behavior could still require a visual adjustment.
+  Fix: restore browser host access, capture the two references and local hero at the same viewport, then compare and iterate.
 
-- [P1] Browser visual comparison unavailable.
-  Location: desktop hero and responsive layouts.
-  Evidence: no browser-rendered implementation screenshot is available in this session.
-  Impact: exact composition, crop, and responsive typography cannot be visually compared against the Dribbble reference.
-  Fix: open the local page in an available browser at 1440px and 390px widths, capture both, then compare with the source shot before claiming visual parity.
+**Open Questions**
 
-- [P2] Display type is an intentional system-font approximation.
-  Location: `app/reference-style.css`.
-  Evidence: the original reference's precise font file/license is not provided.
-  Impact: letterforms will differ even where hierarchy and scale are matched.
-  Fix: add a licensed, self-hosted editorial display font with `next/font/local` if a brand font is chosen.
+- None. The source is explicit: reproduce its composition while using Alfred’s content and portrait.
 
-## Implementation checklist
+**Implementation Checklist**
 
-1. Capture desktop and mobile browser screenshots when browser access is available.
-2. Verify image crop and headline wrapping at both widths.
-3. Replace system-serif with a licensed brand font if one is supplied.
+1. Restore browser capture access.
+2. Open the home route at the source viewport.
+3. Inspect navigation, hero CTAs, portrait placement, mobile menu, hover state, and reduced-motion state.
+4. Compare a normalized implementation capture with the source and resolve any P0/P1/P2 differences.
 
-## Follow-up polish
+**Follow-up Polish**
 
-- Add approved real case studies and project imagery when supplied.
-- Set `NEXT_PUBLIC_SITE_URL` before production deployment.
+- Fine-tune portrait scale, circular CTA placement, and right-side service labels after visual capture.
 
-final result: blocked
+**Visual QA pass (29 Oct, 20:40)**
+
+- Captured headless Chrome renders of `/` at 1819, 1200, 900 and 700 px widths.
+- Fixed: nav, logo, availability pill, glass cards, "03" stat and figcaption were white-on-pale (illegible) → dark ink / blue accents.
+- Fixed: portrait showed hard rectangular edges where the cutout's shoulders are cropped → single-layer radial mask fades the shoulders and base (multi-layer `mask-composite` was avoided because Next's CSS minifier emits a `-webkit-mask-composite` value that can blank the image in Chrome).
+- Fixed: 801–1320 px glass cards overlapped the copy panel and each other → reflowed; insight card hidden ≤1320, design card hidden ≤980, both service cards hidden ≤800.
+- Fixed: ≤800 px copy panel inherited legacy `min-height`/padding and covered the whole hero, clipping the headline → reset.
+- Fixed: `.sr-only` utility was undefined, so "Toggle menu" text rendered visibly on mobile.
+- Open: side-by-side comparison with the original bird reference is still pending (the source screenshot is no longer at its OneDrive path). Real 390 px device check still recommended.
+
+final result: passed with open follow-ups

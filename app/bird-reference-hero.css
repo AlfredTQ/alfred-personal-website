@@ -1,0 +1,153 @@
+.home-main { background: #a9c5d7; }
+.reference-stage { padding: clamp(14px, 4vw, 72px); background: #a9c5d7; }
+
+.reference-stage .hero { position: relative; display: block; width: 100%; min-height: min(760px, calc(100svh - clamp(28px, 8vw, 144px))); overflow: hidden; border-radius: clamp(22px, 3vw, 46px); background: #bed8e5; box-shadow: 0 28px 70px #36556d30; }
+.reference-stage .hero::after { display: none; }
+.reference-stage .hero-copy { position: absolute; z-index: 7; bottom: clamp(62px, 12vh, 122px); left: clamp(28px, 6.2vw, 108px); display: block; width: min(31rem, 37vw); border: 1px solid #ffffff6e; border-radius: 24px; background: linear-gradient(135deg, #f8fcffe0, #edf6ffd1); box-shadow: 0 20px 50px #2b60701c; padding: clamp(18px, 2vw, 30px); backdrop-filter: blur(12px); }
+.reference-stage .hero .eyebrow { color: #2e65a2; font-size: clamp(10px, .8vw, 13px); text-shadow: none; }
+.reference-stage .hero .eyebrow span { background: #2e75b7; }
+.reference-stage .hero h1 { max-width: 600px; margin: 16px 0 18px; color: #122c4a; font-size: clamp(52px, 5vw, 82px); letter-spacing: -.07em; line-height: .89; text-shadow: none; }
+.reference-stage .hero h1 em { color: #2d7dca; }
+.reference-stage .hero .lede { max-width: 28rem; color: #456078; font-size: clamp(14px, 1.05vw, 17px); font-weight: 600; line-height: 1.6; text-shadow: none; }
+.reference-stage .hero-actions { margin-top: 28px; gap: 12px; }
+.reference-stage .hero .button-blue { border-radius: 999px; background: #1475e8; box-shadow: 0 14px 26px #235f9670; padding: 15px 20px; }
+.reference-stage .hero .text-action { border: 1px solid #ffffffa8; border-radius: 999px; background: #ffffffd9; color: #385065; padding: 14px 19px; }
+.reference-stage .hero .text-action span { color: #1475e8; }
+
+.hero-site-header { position: absolute; z-index: 10; top: 0; right: 0; left: 0; border: 0; background: transparent; box-shadow: none; }
+.hero-site-header .nav-wrap { position: relative; width: calc(100% - clamp(36px, 6vw, 100px)); max-width: none; height: clamp(70px, 7vw, 98px); }
+.hero-site-header .nav-wrap::after { content: ''; position: absolute; right: 0; bottom: 0; left: 0; height: 1px; background: linear-gradient(90deg, transparent, #244a653d 18% 82%, transparent); }
+.hero-site-header .logo, .hero-site-header nav a:not(.nav-cta) { color: #183a56; text-shadow: 0 1px 0 #ffffffb8; }
+.hero-site-header nav a:not(.nav-cta):hover { color: #1475e8; }
+.hero-site-header .logo span { color: #2d75b7; }
+.hero-site-header .nav-cta { background: #ffffffdf; box-shadow: 0 10px 24px #3e647437; color: #385065 !important; }
+.hero-site-header .nav-cta span { color: #1475e8; }
+.hero-site-header .nav-cta:hover { background: #fff; }
+
+.reference-stage .reference-hero-media { position: absolute; inset: 0; min-height: 0; overflow: hidden; background: #bdd6e3; }
+.reference-stage .reference-hero-media > img.hero-ambient { object-position: center; opacity: .8; filter: saturate(.7) brightness(1.12) blur(1px); transform: scale(1.03); }
+.reference-stage .reference-hero-media::before { z-index: 1; top: 14%; width: 42%; background: radial-gradient(circle, #ffffffc9 0, #d9f2ff6c 45%, transparent 72%); filter: blur(38px); }
+.reference-stage .reference-hero-media::after { z-index: 5; background: linear-gradient(90deg, #78aac44d 0%, transparent 35%, transparent 68%, #d5edf04f 100%), linear-gradient(0deg, #4e95bd45 0%, transparent 34%) !important; }
+.reference-stage .hero-name-layer { z-index: 1; top: 27%; left: 2%; width: 96%; overflow: hidden; color: #f8feff8f; font-family: Georgia, serif; font-size: clamp(126px, 17vw, 310px); letter-spacing: -.13em; line-height: .56; text-align: center; white-space: nowrap; }
+.reference-stage .reference-hero-media > img.hero-person { z-index: 3; object-fit: contain; object-position: 50% bottom; scale: .92; filter: drop-shadow(0 26px 36px #24546c40); -webkit-mask-image: radial-gradient(ellipse 64% 74% at 50% 45%, #000 55%, #000000d4 69%, transparent 100%); mask-image: radial-gradient(ellipse 64% 74% at 50% 45%, #000 55%, #000000d4 69%, transparent 100%); }
+
+.hero-people { position: absolute; z-index: 7; top: 42%; right: clamp(28px, 6vw, 106px); display: flex; align-items: center; gap: 10px; border: 1px solid #ffffff8c; border-radius: 999px; background: #ffffff35; box-shadow: 0 14px 30px #37698020; backdrop-filter: blur(12px); color: #fff; padding: 9px 13px 9px 18px; font-size: 11px; font-weight: 750; }
+.hero-people b { border-radius: 999px; background: #fff; color: #49758c; padding: 4px 8px; font-size: 10px; }
+.hero-card { position: absolute; z-index: 7; bottom: clamp(32px, 5vw, 78px); min-height: 138px; border: 1px solid #ffffff8c; border-radius: 24px; background: #ffffff3b; box-shadow: 0 18px 35px #2f617d21; backdrop-filter: blur(16px); color: #f8fdff; padding: 20px; transition: transform .35s cubic-bezier(.2,.7,.2,1), background .35s ease; }
+.hero-card:hover { background: #ffffff52; transform: translateY(-7px); }
+.hero-card span { display: block; font-size: 10px; font-weight: 750; letter-spacing: .06em; line-height: 1.45; text-transform: uppercase; }
+.hero-card strong { display: block; max-width: 170px; margin-top: 28px; font-size: clamp(17px, 1.45vw, 25px); letter-spacing: -.05em; line-height: .96; }
+.hero-card i { position: absolute; right: 17px; top: 16px; display: grid; width: 28px; height: 28px; place-items: center; border-radius: 50%; background: #ffffff5e; color: #fff; font-style: normal; }
+.hero-card-design { left: 36%; width: min(23vw, 270px); }
+.hero-card-experience { left: calc(36% + min(23vw, 270px) + clamp(12px, 1.5vw, 24px)); width: min(20vw, 240px); background: #ffffffdc; color: #426277; }
+.hero-card-experience i { background: #e9f7ff; color: #4d7893; }
+.hero-card-insight { right: clamp(24px, 3.7vw, 66px); width: min(18vw, 220px); display: grid; align-content: center; gap: 10px; }
+.hero-card-insight b { color: #fff; font-size: clamp(42px, 5vw, 82px); font-weight: 500; letter-spacing: -.08em; line-height: .8; }
+.hero-card-insight span { max-width: 150px; font-size: 10px; letter-spacing: 0; line-height: 1.38; text-transform: none; }
+.reference-stage .reference-hero-media figcaption { z-index: 8; right: clamp(24px, 3.7vw, 66px); bottom: 12px; left: clamp(24px, 3.7vw, 66px); border: 0; color: #f7fdffbe; font-size: 8px; }
+
+@media (max-width: 980px) {
+  .reference-stage .hero { min-height: 760px; }
+  .reference-stage .hero-copy { width: min(28rem, 45vw); bottom: 70px; }
+  .reference-stage .hero h1 { font-size: clamp(46px, 6.5vw, 66px); }
+  .reference-stage .reference-hero-media > img.hero-person { scale: .86; }
+  .hero-card-design { left: 34%; width: 25vw; }
+  .hero-card-experience { left: calc(34% + 25vw + 12px); width: 21vw; }
+  .hero-card-insight { display: none; }
+}
+
+@media (max-width: 800px) {
+  .reference-stage { padding: 10px; }
+  .reference-stage .hero { min-height: 820px; border-radius: 22px; }
+  .hero-site-header .nav-wrap { width: calc(100% - 30px); height: 68px; }
+  .hero-site-header .menu-button { border-color: #244a656b; background: #ffffffa8; }
+  .hero-site-header .menu-button i { background: #183a56; }
+  .reference-stage .hero-copy { bottom: 34px; left: 26px; width: calc(100% - 52px); }
+  .reference-stage .hero h1 { font-size: clamp(48px, 14vw, 68px); }
+  .reference-stage .hero .lede { max-width: 21rem; font-size: 15px; }
+  .reference-stage .reference-hero-media > img.hero-person { object-position: 54% 12%; scale: .93; }
+  .reference-stage .hero-name-layer { top: 20%; font-size: 35vw; }
+  .reference-stage .portrait-blink { top: 32%; left: 54%; width: 17%; }
+  .hero-people { top: 43%; right: 20px; }
+  .hero-card { bottom: 214px; min-height: 112px; padding: 15px; }
+  .hero-card strong { margin-top: 18px; font-size: 16px; }
+  .hero-card-design { left: 26px; width: min(50vw, 220px); }
+  .hero-card-experience { left: auto; right: 18px; width: min(42vw, 190px); }
+  .reference-stage .reference-hero-media figcaption { right: 22px; bottom: 12px; left: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) { .hero-card { transition: none; } }
+
+/* Visual QA pass: legibility on the pale stage + soften the portrait's cropped shoulders. */
+.hero-site-header .logo, .hero-site-header nav a:not(.nav-cta) { color: #1d3a56; text-shadow: none; }
+.hero-site-header .logo span { color: #1475e8; }
+.hero-site-header nav a:not(.nav-cta):hover { color: #1475e8; }
+.hero-site-header .menu-button i { background: #1d3a56; }
+
+/* Single-layer mask: Next's CSS minifier rewrites mask-composite into a -webkit value that blanks multi-layer masks in Chrome. */
+.reference-stage .reference-hero-media > img.hero-person {
+  -webkit-mask-image: radial-gradient(ellipse 30% 92% at 50% 24%, #000 68%, transparent 100%);
+  mask-image: radial-gradient(ellipse 30% 92% at 50% 24%, #000 68%, transparent 100%);
+}
+
+.hero-people { border-color: #ffffffc2; background: #ffffffb3; color: #2b4a63; }
+.hero-people b { background: #1475e8; color: #fff; }
+.hero-card { border-color: #ffffffc2; background: #ffffffb8; color: #213d57; }
+.hero-card:hover { background: #ffffffd9; }
+.hero-card i { background: #e9f7ff; color: #1475e8; }
+.hero-card-insight b { color: #1475e8; }
+.hero-card-insight span { color: #3d5a72; }
+.reference-stage .reference-hero-media figcaption { color: #2f5470; text-shadow: none; }
+
+@media (max-width: 800px) {
+  .reference-stage .reference-hero-media > img.hero-person {
+    -webkit-mask-image: radial-gradient(ellipse 62% 78% at 50% 36%, #000 66%, transparent 100%);
+    mask-image: radial-gradient(ellipse 62% 78% at 50% 36%, #000 66%, transparent 100%);
+  }
+}
+
+/* Mid-width layouts: keep the glass cards clear of the copy panel. */
+@media (min-width: 801px) and (max-width: 1320px) {
+  .hero-card-insight { display: none; }
+  .hero-card-design { left: 48%; width: min(22vw, 250px); }
+  .hero-card-experience { left: calc(48% + min(22vw, 250px) + 14px); width: min(19vw, 220px); }
+}
+@media (min-width: 801px) and (max-width: 980px) {
+  .hero-card-design { display: none; }
+  .hero-card-experience { left: auto; right: clamp(24px, 4vw, 40px); width: 30vw; }
+}
+
+/* Legacy .hero-copy sizing (full-hero.css / reference-style.css) stretched the glass panel on small screens. */
+.reference-stage .hero-copy { min-height: 0; justify-content: flex-start; gap: 0; }
+@media (max-width: 800px) {
+  .reference-stage .hero-copy { padding: 22px; }
+  .hero-site-header .menu-button { border-color: #1d3a5640; border-radius: 12px; background: #ffffffb3; }
+}
+
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+@media (max-width: 800px) { .hero-card-design, .hero-card-experience { display: none; } }
+
+/* Taller home hero banner. */
+.reference-stage { padding-top: clamp(12px, 2.4vw, 40px); padding-bottom: clamp(12px, 2.4vw, 40px); }
+.reference-stage .hero { min-height: clamp(860px, calc(100svh - clamp(24px, 4.8vw, 80px)), 1080px); }
+@media (max-width: 980px) { .reference-stage .hero { min-height: 880px; } }
+@media (max-width: 800px) { .reference-stage .hero { min-height: 920px; } }
+
+/* Full-shoulder portrait (alfred-hero-shoulders.png): only fade the torso cut at the bottom; face stays untouched. */
+.reference-stage .reference-hero-media > img.hero-person {
+  object-fit: contain;
+  object-position: 50% bottom;
+  -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 80%, transparent 100%);
+}
+@media (max-width: 800px) {
+  .reference-stage .reference-hero-media > img.hero-person {
+    object-position: 50% 30%;
+    -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 96%);
+    mask-image: linear-gradient(180deg, #000 72%, transparent 96%);
+  }
+}
+@media (min-width: 801px) {
+  .reference-stage .reference-hero-media > img.hero-person { top: clamp(84px, 9vw, 120px) !important; height: calc(100% - clamp(84px, 9vw, 120px)) !important; scale: 1; transform-origin: 50% 100%; }
+  .hero:hover .reference-stage .reference-hero-media img.hero-person, .reference-stage .hero:hover .reference-hero-media img.hero-person { scale: 1.02; }
+}

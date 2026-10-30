@@ -10,6 +10,14 @@ import './profile.css';
 import './full-hero.css';
 import './routes.css';
 import './readability.css';
+import './glass-hero.css';
+import './portrait-motion.css';
+import './portrait-crop.css';
+import './premium-finish.css';
+import './bird-reference-hero.css';
+import './combined-home.css';
+import './portfolio-pages.css';
+import './contact-form-modern.css';
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
