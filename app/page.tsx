@@ -32,6 +32,25 @@ function CapabilityIcon({ index }: { index: number }) {
   return <svg {...commonProps}><path d="M7 41h35" /><rect className="capability-icon-bar capability-icon-bar-one" x="11" y="26" width="6" height="15" /><rect className="capability-icon-bar capability-icon-bar-two" x="22" y="18" width="6" height="23" /><rect className="capability-icon-bar capability-icon-bar-three" x="33" y="9" width="6" height="32" /><path d="m10 20 10-7 8 2 11-9" /></svg>;
 }
 
+function ToolIcon({ tool }: { tool: 'photoshop' | 'illustrator' | 'figma' | 'power-bi' | 'fabric' | 'security' }) {
+  if (tool === 'photoshop') {
+    return <svg aria-hidden="true" viewBox="0 0 36 36"><rect x="2" y="2" width="32" height="32" rx="7" fill="#001E36" /><path d="M8 27V9h6.2c4.2 0 6.7 2.1 6.7 5.7s-2.5 5.8-6.7 5.8h-2.5V27H8Zm3.7-9.7h2.4c2.1 0 3.1-.9 3.1-2.6s-1-2.5-3.1-2.5h-2.4v5.1Zm11.5 10c-1.6 0-3.3-.5-4.4-1.3l1.2-2.7c.9.6 2.1 1 3.2 1 1 0 1.4-.3 1.4-.8 0-1.6-5.5-.2-5.5-4.2 0-2.1 1.8-3.5 4.7-3.5 1.4 0 2.9.3 3.9.9l-1.2 2.7c-1-.6-1.9-.8-2.7-.8-.9 0-1.4.3-1.4.8 0 1.6 5.5.2 5.5 4.2 0 2.1-1.8 3.5-4.7 3.5Z" fill="#31A8FF" /></svg>;
+  }
+  if (tool === 'illustrator') {
+    return <svg aria-hidden="true" viewBox="0 0 36 36"><rect x="2" y="2" width="32" height="32" rx="7" fill="#330000" /><path d="m8 26 5.5-16h4.2l5.5 16h-4l-1-3.2h-5.4L11.8 26H8Zm5.7-6.3h3.5l-1.7-5.8-1.8 5.8ZM25.2 13.1a2 2 0 1 1 0-4 2 2 0 0 1 0 4ZM23.4 26V15h3.7v11h-3.7Z" fill="#FF9A00" /></svg>;
+  }
+  if (tool === 'figma') {
+    return <svg aria-hidden="true" viewBox="0 0 36 36"><path d="M12 3h6v10h-6a5 5 0 1 1 0-10Z" fill="#F24E1E" /><path d="M18 3h6a5 5 0 1 1 0 10h-6V3Z" fill="#FF7262" /><path d="M18 13h6a5 5 0 1 1-5 5v-5h-1Z" fill="#A259FF" /><path d="M12 13h6v10h-6a5 5 0 1 1 0-10Z" fill="#1ABCFE" /><circle cx="15" cy="28" r="5" fill="#0ACF83" /></svg>;
+  }
+  if (tool === 'power-bi') {
+    return <svg aria-hidden="true" viewBox="0 0 36 36" fill="none"><path d="M6 28V18h6v10H6Zm8 0V11h6v17h-6Zm8 0V6h6v22h-6Z" fill="#F2C811" /><path d="M4 30h27" stroke="#D7A900" strokeLinecap="round" strokeWidth="2" /></svg>;
+  }
+  if (tool === 'fabric') {
+    return <svg aria-hidden="true" viewBox="0 0 36 36" fill="none"><path d="M7 23.8 18 7l11 16.8-11 5.3L7 23.8Z" fill="#A259FF" /><path d="m12 23.7 6-9.2 6 9.2-6 2.9-6-2.9Z" fill="#111B29" /><path d="m18 7 11 16.8-5.8 2.8-6-9.2-5.8 9.1L7 23.8 18 7Z" fill="#36BFFA" opacity=".92" /><path d="m7 23.8 5-7.7 5.8 9.1-5.8 2.8L7 23.8Z" fill="#F05A9D" /></svg>;
+  }
+  return <svg aria-hidden="true" viewBox="0 0 36 36" fill="none"><path d="M18 4 29 8.7v8.1c0 7.1-4.5 12.1-11 15.2C11.5 28.9 7 23.9 7 16.8V8.7L18 4Z" fill="#2176D2" /><path d="M18 7 26 10.4v6.2c0 5.5-3.1 9.5-8 12.2-4.9-2.7-8-6.7-8-12.2v-6.2L18 7Z" fill="#54C8F5" /><path d="m13 18 3.3 3.3 6.8-7.1" stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" /></svg>;
+}
+
 export default function Home() {
   return <>
     <a className="skip-link" href="#main">Skip to content</a>
@@ -61,17 +80,67 @@ export default function Home() {
       </div>
 
       <section className="home-about section" id="about" aria-labelledby="about-title">
-        <div className="shell home-about-grid">
-          <Reveal className="home-about-portrait">
-            <Image src="/images/alfred-hero-shoulders.png" alt="Alfred Tackie-Quaye" fill sizes="(max-width: 800px) 100vw, 38vw" />
-            <span>Based in Ghana · Available worldwide</span>
-          </Reveal>
-          <div className="home-about-copy">
-            <Reveal><p className="section-label">About</p><h2 id="about-title">Designer. Analyst.<br /><em>Clarity builder.</em></h2></Reveal>
-            <Reveal><p>I’m Alfred Tackie-Quaye, a Ghana-based creative and data professional working across graphic design, UI/UX, social media management, and Power BI analytics.</p><p>I bring visual thinking and evidence-informed problem solving together to make ideas easier to understand, experiences easier to use, and information easier to act on.</p><p>Whether the work is a brand touchpoint, interface, campaign, or report, the aim is consistent: help the right thing stand out and make the next step easier.</p></Reveal>
+        <div className="shell home-about-shell">
+          <div className="home-about-heading">
+            <p className="section-label">The person behind the work</p>
+            <h2 id="about-title">About <em>me.</em></h2>
+            <p>Creative thinking, analytical perspective, and a focus on making the next step clearer.</p>
           </div>
-          <div className="home-about-principles">
-            <p>Visual thinking</p><p>Useful experiences</p><p>Decision-ready data</p>
+          <div className="home-about-grid">
+            <Reveal className="home-about-portrait">
+              <Image src="/images/alfred-hero-shoulders.png" alt="Alfred Tackie-Quaye" fill sizes="(max-width: 800px) 100vw, 26vw" />
+              <div className="about-tools-marquee" role="group" aria-label="Tools I use">
+                <div className="about-tools-track">
+                  {[0, 1].map((copy) => (
+                    <div className="about-tools-group" key={copy} aria-hidden={copy === 1}>
+                      {[0, 1].map((repeat) => (
+                        <div className="about-tools-set" key={repeat} aria-hidden={repeat > 0}>
+                          {([
+                            ['photoshop', 'Photoshop'],
+                            ['illustrator', 'Illustrator'],
+                            ['figma', 'Figma'],
+                            ['power-bi', 'Power BI'],
+                            ['fabric', 'Microsoft Fabric'],
+                            ['security', 'Microsoft Security'],
+                          ] as const).map(([tool, label], index) => (
+                            <span
+                              className={`about-tool about-tool-${tool}`}
+                              key={tool}
+                              style={{ animationDelay: `${((11 - (repeat * 6 + index)) * 48) / 12 - 1.2}s` }}
+                            >
+                              <i><ToolIcon tool={tool} /></i><b>{label}</b>
+                            </span>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <span><b>Alfred Tackie-Quaye</b><small>Designer · Analyst</small></span>
+            </Reveal>
+            <div className="home-about-copy">
+              <Reveal><p className="section-label">Designer. Analyst.</p><h3>Clarity builder.</h3></Reveal>
+              <Reveal className="home-about-story">
+                <p>I’m Alfred Tackie-Quaye, a Ghana-based creative and data professional working across graphic design, UI/UX, social media management, and Power BI analytics.</p>
+                <p>I bring visual thinking and evidence-informed problem solving together to make ideas easier to understand, experiences easier to use, and information easier to act on.</p>
+                <Link href="/#services" className="text-action">Explore my capabilities <span>↗</span></Link>
+              </Reveal>
+              <div className="home-about-metrics" aria-label="About my work">
+                <div><strong>04</strong><span>Connected disciplines</span></div>
+                <div><strong>01</strong><span>Clear goal: move work forward</span></div>
+              </div>
+            </div>
+            <aside className="home-about-snapshot" aria-label="Areas of practice">
+              <p className="section-label">Areas of practice</p>
+              <ul>
+                <li><span>01</span><div><strong>Visual identity</strong><small>Graphic design &amp; brand systems</small></div></li>
+                <li><span>02</span><div><strong>Digital experiences</strong><small>UI/UX design &amp; strategy</small></div></li>
+                <li><span>03</span><div><strong>Social media</strong><small>Content &amp; communication</small></div></li>
+                <li><span>04</span><div><strong>Data storytelling</strong><small>Power BI &amp; useful insights</small></div></li>
+              </ul>
+              <p className="home-about-location"><span aria-hidden="true" />Based in Ghana · Available worldwide</p>
+            </aside>
           </div>
         </div>
       </section>
@@ -113,7 +182,7 @@ export default function Home() {
           <div className="home-practice-inner">
             <p className="section-label">Skills &amp; learning</p><h2>Tools, knowledge<br />&amp; credentials</h2>
             <p className="home-practice-summary">Ongoing learning in analytics, cloud, security, and data engineering supports informed, practical design decisions.</p>
-            <div className="home-credential-list">{credentials.map(([code, title]) => <div key={code}><span>{code}</span><strong>{title}</strong></div>)}</div>
+            <div className="home-credential-list">{credentials.map(([code, title]) => <article className="home-credential-card" key={code}><div className="home-credential-card-top">{code === 'ITIL' ? <span className="itil-mark" role="img" aria-label="ITIL certification">ITIL</span> : <span className="microsoft-mark" role="img" aria-label="Microsoft logo"><i /><i /><i /><i /></span>}<span className="home-credential-code">{code}</span></div><strong>{title}</strong></article>)}</div>
             <Link href="/#credentials" className="text-action">Credentials overview <span>↗</span></Link>
           </div>
         </div>
@@ -121,11 +190,11 @@ export default function Home() {
 
       <section className="contact-section" id="contact">
         <div className="shell contact-layout">
-          <div className="contact-copy"><p className="section-label">Let’s make it useful</p><h2>Have a challenge<br /><em>worth clarifying?</em></h2><p>Whether you need a clearer identity, a more useful digital experience, or a better way to see the data, I’d be glad to hear what is next.</p><a href="mailto:alfredtackiequaye@gmail.com">alfredtackiequaye@gmail.com <span>↗</span></a><ContactDetails className="home-contact-details" /></div>
+          <div className="contact-copy"><p className="section-label">Let’s make it useful</p><h2>Have a challenge<br /><em>worth clarifying?</em></h2><p>Whether you need a clearer identity, a more useful digital experience, or a better way to see the data, I’d be glad to hear what is next.</p><ContactDetails className="home-contact-details" copyable /></div>
           <ContactPanel />
         </div>
       </section>
     </main>
-    <footer className="footer"><div className="shell"><Logo /><ContactDetails className="footer-contact-details" /><p>© {new Date().getFullYear()} Alfred Tackie-Quaye</p><div className="footer-social"><a href="https://www.linkedin.com/in/alfred-tackie-quaye-93b28314b" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/AlfredTQ" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></footer>
+    <footer className="footer"><div className="shell"><Logo /><p>© {new Date().getFullYear()} Alfred Tackie-Quaye</p><div className="footer-social"><a href="https://www.linkedin.com/in/alfred-tackie-quaye-93b28314b" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/AlfredTQ" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></footer>
   </>;
 }

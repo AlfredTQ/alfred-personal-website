@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { vi } from 'vitest';
 import Home from '@/app/page';
 import AboutPage from '@/app/about/page';
 import ContactPage from '@/app/contact/page';
@@ -21,6 +22,19 @@ describe('Home page', () => {
   it('uses the complete editorial portfolio flow across capabilities, work, process, and credentials', () => {
     render(<Home />);
     expect(screen.getByRole('heading', { name: /clarity builder/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /about me/i })).toBeInTheDocument();
+    expect(screen.getByRole('complementary', { name: /areas of practice/i })).toBeInTheDocument();
+    const aboutPractice = screen.getByRole('complementary', { name: /areas of practice/i });
+    expect(aboutPractice).toHaveTextContent('Visual identity');
+    expect(aboutPractice).toHaveTextContent('Data storytelling');
+    expect(screen.getByRole('link', { name: /explore my capabilities/i })).toHaveAttribute('href', '/#services');
+    const aboutTools = screen.getByRole('group', { name: /tools i use/i });
+    expect(aboutTools).toHaveTextContent('Photoshop');
+    expect(aboutTools).toHaveTextContent('Illustrator');
+    expect(aboutTools).toHaveTextContent('Figma');
+    expect(aboutTools).toHaveTextContent('Power BI');
+    expect(aboutTools).toHaveTextContent('Fabric');
+    expect(aboutTools).toHaveTextContent('Security');
     expect(screen.getByRole('heading', { name: /what i can do for your work/i })).toBeInTheDocument();
     const serviceLinks = screen.getAllByRole('link', { name: /discuss this service/i });
     expect(serviceLinks).toHaveLength(4);
@@ -34,6 +48,11 @@ describe('Home page', () => {
     expect([...document.querySelectorAll('.home-service-icon svg')].every((icon) => icon.getAttribute('aria-hidden') === 'true')).toBe(true);
     expect(screen.getByRole('heading', { name: /a few things made with intent/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /my approach/i })).toBeInTheDocument();
+    expect(screen.getAllByRole('img', { name: /microsoft logo/i })).toHaveLength(3);
+    expect(screen.getByRole('img', { name: /itil certification/i })).toBeInTheDocument();
+    expect(screen.getByText('ITIL Certification')).toBeInTheDocument();
+    expect([...document.querySelectorAll('.home-credential-code')].map((code) => code.textContent)).toEqual(['PL-300', 'DP-700', 'SC-900', 'ITIL']);
+    expect(document.querySelectorAll('.home-credential-date')).toHaveLength(0);
     expect(screen.getByRole('link', { name: /credentials overview/i })).toHaveAttribute('href', '/#credentials');
     expect(screen.getByRole('form')).toBeInTheDocument();
   });
@@ -52,7 +71,6 @@ describe('Home page', () => {
       'What I help clarify',
       'Capabilities',
       'Selected work',
-      'Process',
       'Credentials',
       'Contact',
       'Start a conversation ↗',
@@ -62,7 +80,7 @@ describe('Home page', () => {
     expect(screen.getByRole('link', { name: 'What I help clarify' })).toHaveAttribute('href', '/#clarify');
     expect(screen.getByRole('link', { name: 'Selected work' })).toHaveAttribute('href', '/#work');
     expect(screen.getByRole('link', { name: 'Capabilities' })).toHaveAttribute('href', '/#services');
-    expect(screen.getByRole('link', { name: 'Process' })).toHaveAttribute('href', '/#process');
+    expect(screen.queryByRole('link', { name: 'Process' })).not.toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Credentials' })).toHaveAttribute('href', '/#credentials');
     expect(screen.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '/#contact');
     expect(document.querySelector('#primary-nav .nav-cta')).toHaveAttribute('href', '/#contact');
@@ -89,6 +107,26 @@ describe('Contact details', () => {
     expect(screen.getAllByText('Accra, Ghana').length).toBeGreaterThan(0);
     expect(screen.getAllByRole('link', { name: /alfredtackiequaye@gmail\.com/i }).every((link) => link.getAttribute('href') === 'mailto:alfredtackiequaye@gmail.com')).toBe(true);
     expect(screen.getAllByRole('link', { name: /\+233 240 791 866/i }).every((link) => link.getAttribute('href') === 'tel:+233240791866')).toBe(true);
+    expect(document.querySelector('footer .contact-details')).not.toBeInTheDocument();
+    expect(document.querySelector('footer .footer-social a[href*="linkedin.com"]')).toBeInTheDocument();
+  });
+
+  it('lets clients copy contact details and provides a map link', async () => {
+    const writeText = vi.fn().mockResolvedValue(undefined);
+    Object.defineProperty(navigator, 'clipboard', { configurable: true, value: { writeText } });
+    render(<Home />);
+
+    expect(
+      screen.getAllByRole('link', { name: /Accra, Ghana View location on map/i }).some(
+        (link) => link.getAttribute('href') === 'https://maps.google.com/?q=Accra%2C%20Ghana',
+      ),
+    ).toBe(true);
+    expect(screen.getAllByRole('button', { name: /^copy /i })).toHaveLength(3);
+
+    fireEvent.click(screen.getByRole('button', { name: 'Copy email' }));
+
+    expect(writeText).toHaveBeenCalledWith('alfredtackiequaye@gmail.com');
+    expect(await screen.findByText('Email copied.')).toHaveAttribute('role', 'status');
   });
 });
 

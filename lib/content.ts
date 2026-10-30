@@ -10,7 +10,6 @@ export const navigation = [
   ['What I help clarify', '/#clarify'],
   ['Capabilities', '/#services'],
   ['Selected work', '/#work'],
-  ['Process', '/#process'],
   ['Credentials', '/#credentials'],
   ['Contact', '/#contact'],
 ] as const;
@@ -23,7 +22,8 @@ export const services = [
 ];
 
 export const credentials = [
-  ['PL-300', 'Microsoft Power BI Data Analyst', '25 Nov 2025'],
-  ['DP-700', 'Implementing Data Engineering Solutions Using Microsoft Fabric', '6 Jan 2026'],
-  ['SC-900', 'Microsoft Security, Compliance, and Identity Fundamentals', '30 Jun 2026'],
+  ['PL-300', 'Microsoft Power BI Data Analyst'],
+  ['DP-700', 'Implementing Data Engineering Solutions Using Microsoft Fabric'],
+  ['SC-900', 'Microsoft Security, Compliance, and Identity Fundamentals'],
+  ['ITIL', 'ITIL Certification'],
 ] as const;
