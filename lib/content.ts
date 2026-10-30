@@ -1,7 +1,16 @@
 export const contactEmail = 'alfredtackiequaye@gmail.com';
 
+// Keep the navigation and the corresponding home-page sections in the same language.
+export const navigation = [
+  ['Home', '/'],
+  ['About', '/about'],
+  ['Capabilities', '/services'],
+  ['Selected work', '/work'],
+  ['Credentials', '/credentials'],
+] as const;
+
 export const services = [
-  { number: '01', title: 'Brand & visual systems', description: 'Identity, campaign, and communication systems that help people recognise the message and trust what they see.', tag: 'Clarity people remember' },
+  { number: '01', title: 'Brand & visual systems', description: 'Logo and identity design, campaign direction, and communication systems that help people recognise the message and trust what they see.', tag: 'Recognisable by design' },
   { number: '02', title: 'UI/UX design', description: 'Digital journeys shaped around real tasks—clearer paths, calmer decisions, and experiences people can use with confidence.', tag: 'Useful by design' },
   { number: '03', title: 'Digital strategy', description: 'A practical point of view on what to say, where to say it, and how each digital touchpoint should work together.', tag: 'Made to connect' },
   { number: '04', title: 'Data storytelling', description: 'Power BI reports and visual analysis that turn complex information into an informed next step.', tag: 'Evidence, made useful' },

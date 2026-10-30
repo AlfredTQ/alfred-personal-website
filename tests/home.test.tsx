@@ -15,7 +15,7 @@ describe('Home page', () => {
 
   it('labels concept studies honestly while real case studies are in development', () => {
     render(<Home />);
-    expect(screen.getByText(/selected work/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/selected work/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/concept studies.*real case studies coming next/i)).toBeInTheDocument();
   });
 });

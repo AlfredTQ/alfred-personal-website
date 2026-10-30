@@ -79,6 +79,7 @@
 
 /* Concept work is deliberately labelled as exploratory until real case studies replace it. */
 .work-section { display: block; min-height: 0; padding: clamp(104px, 12vw, 174px) 0; background: radial-gradient(circle at 83% 8%, #2b5fad26 0, transparent 29rem), linear-gradient(135deg, #080b12, #0b1220); }
+.home-main .work-section > .shell { width: min(1320px, calc(100% - clamp(48px, 9vw, 160px))); margin-inline: auto; }
 .concept-work-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(14px, 2vw, 28px); margin-top: clamp(58px, 7vw, 104px); }
 .concept-work-card { grid-column: span 5; min-width: 0; }
 .concept-work-card:first-child { grid-column: span 7; }
@@ -203,6 +204,7 @@
   .concept-work-image { min-height: 310px; }
   .concept-work-card:last-child .concept-work-copy { min-height: 0; border-top: 0; border-left: 1px solid #ffffff1f; }
   .home-main > .section > .shell, .home-main > .contact-section > .shell { width: calc(100% - 48px); }
+  .home-main .work-section > .shell { width: calc(100% - 48px); }
   .home-main .intro { padding: 84px 0; }
   .home-main .intro-grid, .home-main .credentials-layout, .home-main .contact-layout { grid-template-columns: 1fr; gap: 38px; }
   .home-main .intro .section-label { margin-bottom: 34px; }
@@ -249,6 +251,7 @@
   .concept-work-copy h3 { font-size: 34px; }
   .concept-work-copy > span { font-size: 14px; }
   .home-main > .section > .shell, .home-main > .contact-section > .shell { width: calc(100% - 40px); }
+  .home-main .work-section > .shell { width: calc(100% - 40px); }
   .home-main .intro-grid > div, .home-main .section-top > p { padding-left: 16px; }
   .home-main .service-grid { grid-template-columns: 1fr; }
   .home-main .service-card { min-height: 250px; }
