@@ -461,6 +461,8 @@
 .home-section-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, .42fr); gap: 20px clamp(40px, 8vw, 110px); align-items: end; margin-bottom: clamp(36px, 5vw, 66px); }
 .home-section-heading .section-label { grid-column: 1 / -1; margin: 0; }
 .home-section-heading h2 { grid-column: 1; }
+.home-services .home-section-heading h2 { color: #101a2c; font-size: clamp(40px, 5vw, 68px); font-weight: 850; letter-spacing: -.035em; line-height: 1; }
+.home-services .home-section-heading h2 em { color: #3f7ae8; font-style: normal; }
 .home-section-heading > p:last-child { max-width: 350px; margin: 0; color: #566781; font-size: 15px; line-height: 1.8; }
 .home-service-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
 .home-service-card { height: 100%; }
