@@ -530,6 +530,13 @@
 .home-practice-process li > span { color: #79b0ff; font-family: var(--display); font-size: 22px; }
 .home-practice-process li strong { color: #f7fbff; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
 .home-practice-process li p { margin: 4px 0 0; color: #c3d1e5; font-size: 12px; line-height: 1.55; }
+.process-step-reveal.is-visible li { animation: process-step-arrive .48s both cubic-bezier(.2,.7,.2,1); }
+.process-step-reveal.is-visible li:nth-child(2) { animation-delay: .07s; }
+.process-step-reveal.is-visible li:nth-child(3) { animation-delay: .14s; }
+.process-step-reveal.is-visible li:nth-child(4) { animation-delay: .21s; }
+.process-step-reveal.is-visible li:nth-child(5) { animation-delay: .28s; }
+@keyframes process-step-arrive { from { opacity: .3; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.credential-intro { max-width: 460px; }
 .home-practice-summary { max-width: 390px; color: #566781; font-size: 14px; line-height: 1.75; }
 .home-credential-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 20px 0 25px; }
 .home-credential-reveal { display: flex; width: 100%; justify-self: center; }
@@ -557,6 +564,7 @@
 .home-main .contact-layout { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(35px, 6vw, 90px); }
 .home-main .contact-copy h2 { font-family: var(--display); font-size: clamp(42px, 4.8vw, 72px); font-weight: 500; letter-spacing: -.04em; line-height: .98; }
 .home-main .contact-copy h2 em { font-style: italic; }
+.contact-form-reveal { display: flex; justify-content: flex-end; }
 .home-contact-details { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 28px; }
 .home-contact-details .contact-detail { grid-template-columns: 44px minmax(0, 1fr) auto; align-items: center; gap: 13px; border-color: #ffffff1c; border-radius: 10px; background: linear-gradient(110deg, #ffffff0d, #ffffff05); padding: 13px 14px; box-shadow: inset 0 1px #ffffff08; transition: transform .22s ease, border-color .22s ease, background .22s ease, box-shadow .22s ease; }
 .home-contact-details .contact-detail:hover { transform: translateY(-2px); border-color: #77aaff73; background: linear-gradient(110deg, #4e8cff20, #ffffff08); box-shadow: 0 12px 30px #0000001a, inset 0 1px #ffffff0d; }
@@ -651,7 +659,15 @@
   box-shadow: 0 20px 38px #13263c1c, 0 5px 12px #13263c0b, 0 0 18px #4e8cff24, inset 0 0 0 1px #4e8cff24;
   transform: translateY(-5px);
 }
+.home-about-grid > .reveal:nth-child(2),
+.home-service-grid > .reveal:nth-child(2),
+.home-service-grid > .reveal:nth-child(3),
+.home-service-grid > .reveal:nth-child(4) { transition-delay: .1s; }
+.home-service-grid > .reveal:nth-child(3) { transition-delay: .2s; }
+.home-service-grid > .reveal:nth-child(4) { transition-delay: .3s; }
+
 .concept-work-card {
+  height: 100%;
   box-shadow: 0 18px 34px #0000001a;
   transition: box-shadow .3s ease, transform .3s cubic-bezier(.2,.7,.2,1);
 }
@@ -664,8 +680,13 @@
 @media (prefers-reduced-motion: reduce) {
   .about-tools-track { animation: none; }
   .about-tool { transform: none; animation: none; }
+  .reveal { transition: none; }
   .proof-grid > .proof-tile,
-  .home-credential-reveal { transition-delay: 0s; }
+  .home-credential-reveal,
+  .concept-work-reveal,
+  .home-about-grid > .reveal,
+  .home-service-grid > .reveal { transition-delay: 0s; }
+  .process-step-reveal.is-visible li { animation: none; }
   .home-credential-card:hover::after,
   .home-credential-card:focus-within::after { animation: none; }
   .concept-work-card:hover .concept-work-image img,

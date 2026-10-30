@@ -24,6 +24,8 @@
 .form-bottom .button-dark i { font-size: 19px; font-style: normal; line-height: 1; }
 .form-notice { min-height: 0; margin: 14px 0 0 !important; color: #3978e8; font-size: 12px !important; line-height: 1.5; }
 .form-notice:empty { display: none; }
+.form-notice:not(:empty) { animation: form-notice-arrive .28s ease-out both; }
+@keyframes form-notice-arrive { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
 
 @media (max-width: 560px) {
   .contact-form { max-width: none; border-radius: 10px; padding: 24px 20px; }
@@ -33,4 +35,8 @@
   .form-bottom { align-items: stretch; flex-direction: column; }
   .form-bottom > p { max-width: none; }
   .form-bottom .button-dark { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .form-notice:not(:empty) { animation: none; }
 }

@@ -80,11 +80,11 @@ export default function Home() {
 
       <section className="home-about section" id="about" aria-labelledby="about-title">
         <div className="shell home-about-shell">
-          <div className="home-about-heading">
+          <Reveal className="home-about-heading">
             <p className="section-label">The person behind the work</p>
             <h2 id="about-title">About <em>me.</em></h2>
             <p>Creative thinking, analytical perspective, and a focus on making the next step clearer.</p>
-          </div>
+          </Reveal>
           <div className="home-about-grid">
             <Reveal className="home-about-portrait">
               <Image src="/images/alfred-hero-shoulders.png" alt="Alfred Tackie-Quaye" fill sizes="(max-width: 800px) 100vw, 26vw" />
@@ -146,7 +146,7 @@ export default function Home() {
 
       <section className="client-proof" id="clarify" aria-labelledby="proof-title">
         <div className="shell">
-          <div className="proof-intro"><p className="section-label">How I help</p><h2 id="proof-title">Make it easier to<br /><em>recognise, use, and act on.</em></h2><p>Good work should do more than look polished. It should help the right people understand the message, move through the experience, and make the next decision with confidence.</p></div>
+          <Reveal className="proof-intro"><p className="section-label">How I help</p><h2 id="proof-title">Make it easier to<br /><em>recognise, use, and act on.</em></h2><p>Good work should do more than look polished. It should help the right people understand the message, move through the experience, and make the next decision with confidence.</p></Reveal>
           <div className="proof-grid">
             <Reveal className="proof-tile"><article><span>01</span><i className="proof-art" aria-hidden="true" /><h3>Make it recognisable.</h3><p>Brand and visual systems that give an organisation a clear, consistent presence.</p></article></Reveal>
             <Reveal className="proof-tile"><article><span>02</span><i className="proof-art" aria-hidden="true" /><h3>Make it easier to use.</h3><p>Digital experiences shaped around the tasks people are actually trying to complete.</p></article></Reveal>
@@ -158,13 +158,13 @@ export default function Home() {
 
       <section className="home-services section" id="services" aria-labelledby="services-title">
         <div className="shell">
-          <div className="home-section-heading"><p className="section-label">Services</p><h2 id="services-title">What I can do<br /><em>for your work.</em></h2><p>Choose one discipline or bring them together. The aim is to make the message, journey, or decision easier to move on.</p></div>
+          <Reveal className="home-section-heading"><p className="section-label">Services</p><h2 id="services-title">What I can do<br /><em>for your work.</em></h2><p>Choose one discipline or bring them together. The aim is to make the message, journey, or decision easier to move on.</p></Reveal>
           <div className="home-service-grid">{services.map((service, index) => <Reveal key={service.number} className="home-service-card"><article><div className="home-service-card-top"><span>{service.number}</span><span className="home-service-icon"><CapabilityIcon index={index} /></span></div><h3>{service.title}</h3><p>{service.description}</p><CapabilityInquiryLink service={service.title} /></article></Reveal>)}</div>
         </div>
       </section>
 
       <section className="work-section" id="work">
-        <div className="shell work-intro"><p className="section-label">Selected projects</p><p className="work-index">01 — 02 — 03</p><h2>A few things<br /><em>made with intent.</em></h2><div><p>These concept studies show how I approach a brief—from a clearer identity, to a more useful journey, to information people can act on.</p><p className="work-status">Concept studies · Real case studies coming next</p></div></div>
+        <Reveal className="shell work-intro"><p className="section-label">Selected projects</p><p className="work-index">01 — 02 — 03</p><h2>A few things<br /><em>made with intent.</em></h2><div><p>These concept studies show how I approach a brief—from a clearer identity, to a more useful journey, to information people can act on.</p><p className="work-status">Concept studies · Real case studies coming next</p></div></Reveal>
         <ConceptStudyGrid />
       </section>
 
@@ -172,19 +172,19 @@ export default function Home() {
         <div className="home-practice-process" id="process">
           <div className="home-practice-inner">
             <p className="section-label">Process</p><h2>My approach</h2>
-            <ol>
+            <Reveal className="process-step-reveal"><ol>
               <li><span>01</span><div><strong>Clarify</strong><p>Understand your goals, audience, and vision.</p></div></li>
               <li><span>02</span><div><strong>Plan</strong><p>Shape the strategy, structure, and user flow.</p></div></li>
               <li><span>03</span><div><strong>Design</strong><p>Craft visual systems and interactions with intention.</p></div></li>
               <li><span>04</span><div><strong>Develop</strong><p>Build and refine the work into a useful outcome.</p></div></li>
               <li><span>05</span><div><strong>Launch</strong><p>Test, refine, and launch with confidence.</p></div></li>
-            </ol>
+            </ol></Reveal>
           </div>
         </div>
         <div className="home-practice-credentials" id="credentials">
           <div className="home-practice-inner">
-            <p className="section-label">Skills &amp; learning</p><h2>Tools, knowledge<br />&amp; credentials</h2>
-            <p className="home-practice-summary">Ongoing learning in analytics, cloud, security, and data engineering supports informed, practical design decisions.</p>
+            <Reveal className="credential-intro"><p className="section-label">Skills &amp; learning</p><h2>Tools, knowledge<br />&amp; credentials</h2>
+            <p className="home-practice-summary">Ongoing learning in analytics, cloud, security, and data engineering supports informed, practical design decisions.</p></Reveal>
             <div className="home-credential-list">{credentials.map(([code, title]) => <Reveal className="home-credential-reveal" key={code}><article className="home-credential-card"><div className="home-credential-card-top">{code === 'ITIL' ? <span className="itil-mark" role="img" aria-label="ITIL certification">ITIL</span> : <span className="microsoft-mark" role="img" aria-label="Microsoft logo"><i /><i /><i /><i /></span>}<span className="home-credential-code">{code}</span></div><strong>{title}</strong></article></Reveal>)}</div>
             <Link href="/#credentials" className="text-action">Credentials overview <span>↗</span></Link>
           </div>
@@ -193,8 +193,8 @@ export default function Home() {
 
       <section className="contact-section" id="contact">
         <div className="shell contact-layout">
-          <div className="contact-copy"><p className="section-label">Let’s make it useful</p><h2>Have a challenge<br /><em>worth clarifying?</em></h2><p>Whether you need a clearer identity, a more useful digital experience, or a better way to see the data, I’d be glad to hear what is next.</p><ContactDetails className="home-contact-details" copyable /></div>
-          <ContactPanel />
+          <Reveal className="contact-copy"><p className="section-label">Let’s make it useful</p><h2>Have a challenge<br /><em>worth clarifying?</em></h2><p>Whether you need a clearer identity, a more useful digital experience, or a better way to see the data, I’d be glad to hear what is next.</p><ContactDetails className="home-contact-details" copyable /></Reveal>
+          <Reveal className="contact-form-reveal"><ContactPanel /></Reveal>
         </div>
       </section>
     </main>

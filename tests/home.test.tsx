@@ -51,7 +51,10 @@ describe('Home page', () => {
     expect(document.querySelectorAll('.home-service-icon svg')).toHaveLength(4);
     expect([...document.querySelectorAll('.home-service-icon svg')].every((icon) => icon.getAttribute('aria-hidden') === 'true')).toBe(true);
     expect(screen.getByRole('heading', { name: /a few things made with intent/i })).toBeInTheDocument();
+    expect(document.querySelectorAll('.concept-work-grid > .concept-work-reveal')).toHaveLength(3);
     expect(screen.getByRole('heading', { name: /my approach/i })).toBeInTheDocument();
+    expect(document.querySelectorAll('.process-step-reveal li')).toHaveLength(5);
+    expect(document.querySelector('.contact-form-reveal form')).toBeInTheDocument();
     expect(screen.getAllByRole('img', { name: /microsoft logo/i })).toHaveLength(3);
     expect(screen.getByRole('img', { name: /itil certification/i })).toBeInTheDocument();
     expect(screen.getByText('ITIL Certification')).toBeInTheDocument();
