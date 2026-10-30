@@ -121,14 +121,14 @@
 .concept-work-reveal:nth-child(2) { transition-delay: .1s; }
 .concept-work-reveal:nth-child(3) { transition-delay: .2s; }
 .concept-work-card { min-width: 0; }
-.concept-work-card:last-child { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(280px, .72fr); align-items: stretch; }
+.concept-work-reveal:last-child .concept-work-card { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(280px, .72fr); align-items: stretch; }
 .concept-work-image { position: relative; min-height: clamp(330px, 32vw, 520px); overflow: hidden; background: #101827; }
 .concept-work-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, #070b12d9 0%, transparent 48%); pointer-events: none; }
 .concept-work-image img { object-fit: cover; transition: transform .7s cubic-bezier(.2,.7,.2,1); }
 .concept-work-card:hover .concept-work-image img, .concept-work-card:focus-within .concept-work-image img { transform: scale(1.06); }
 .concept-work-image span { position: absolute; z-index: 1; top: 18px; left: 18px; border: 1px solid #ffffff57; background: #080b1299; color: #f3f7ff; padding: 7px 9px; font-size: 10px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; backdrop-filter: blur(8px); }
 .concept-work-copy { padding: 20px 0 0; }
-.concept-work-card:last-child .concept-work-copy { display: flex; min-height: 100%; flex-direction: column; justify-content: flex-end; border: 1px solid #ffffff1f; border-left: 0; background: #0e1624; padding: clamp(28px, 3vw, 54px); }
+.concept-work-reveal:last-child .concept-work-card .concept-work-copy { display: flex; min-height: 100%; flex-direction: column; justify-content: flex-end; border: 1px solid #ffffff1f; border-left: 0; background: #0e1624; padding: clamp(28px, 3vw, 54px); }
 .concept-work-copy > p { margin: 0 0 18px; color: #82b4ff; font-size: 11px; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; }
 .concept-work-copy h3 { margin: 0 0 12px; color: #f7fbff; font-size: clamp(30px, 3vw, 52px); font-weight: 750; letter-spacing: -.07em; line-height: .95; }
 .concept-work-copy > span { display: block; max-width: 430px; color: #b8c8dd; font-size: 15px; line-height: 1.72; }
@@ -238,9 +238,9 @@
   .proof-footer { align-items: flex-start; flex-direction: column; }
   .concept-work-grid { grid-template-columns: 1fr; margin-top: 48px; }
   .concept-work-reveal, .concept-work-reveal:first-child, .concept-work-reveal:last-child { grid-column: auto; }
-  .concept-work-card, .concept-work-card:last-child { display: block; }
+  .concept-work-reveal:last-child .concept-work-card { display: block; }
   .concept-work-image { min-height: 310px; }
-  .concept-work-card:last-child .concept-work-copy { min-height: 0; border-top: 0; border-left: 1px solid #ffffff1f; }
+  .concept-work-reveal:last-child .concept-work-card .concept-work-copy { min-height: 0; border-top: 0; border-left: 1px solid #ffffff1f; }
   .home-main > .section > .shell, .home-main > .contact-section > .shell { width: calc(100% - 48px); }
   .home-main .work-section > .shell, .home-main .intro > .shell { width: calc(100% - 48px); }
   .home-main .intro { padding: 84px 0; }
@@ -288,7 +288,7 @@
   .proof-note { font-size: 10px; line-height: 1.5; }
   .concept-work-image { min-height: 265px; }
   .concept-work-copy { padding-top: 16px; }
-  .concept-work-card:last-child .concept-work-copy { padding: 25px; }
+  .concept-work-reveal:last-child .concept-work-card .concept-work-copy { padding: 25px; }
   .concept-work-copy h3 { font-size: 34px; }
   .concept-work-copy > span { font-size: 14px; }
   .home-main > .section > .shell, .home-main > .contact-section > .shell { width: calc(100% - 40px); }
@@ -306,8 +306,8 @@
 .proof-grid article { border-radius: 10px; }
 .proof-grid article::after { border-color: #c5d9f35e; }
 .concept-work-image { border-radius: 10px; }
-.concept-work-card:last-child .concept-work-image { border-radius: 10px 0 0 10px; }
-.concept-work-card:last-child .concept-work-copy { border-radius: 0 10px 10px 0; }
+.concept-work-reveal:last-child .concept-work-card .concept-work-image { border-radius: 10px 0 0 10px; }
+.concept-work-reveal:last-child .concept-work-card .concept-work-copy { border-radius: 0 10px 10px 0; }
 .home-main .credentials-list article { border-radius: 8px; }
 .home-main .contact-form { border-radius: 12px; box-shadow: 20px 24px 0 #4e8cff1c, 0 26px 70px #0000002e; }
 .home-main .contact-form input, .home-main .contact-form textarea, .home-main .contact-form select { border-radius: 4px; transition: border-color .22s ease, box-shadow .22s ease; }

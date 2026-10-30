@@ -82,7 +82,7 @@ export default function Home() {
         <div className="shell home-about-shell">
           <Reveal className="home-about-heading">
             <p className="section-label">The person behind the work</p>
-            <h2 id="about-title">About <em>me.</em></h2>
+            <h2 id="about-title">About <em>me</em></h2>
             <p>Creative thinking, analytical perspective, and a focus on making the next step clearer.</p>
           </Reveal>
           <div className="home-about-grid">

@@ -136,7 +136,7 @@
 .work-route-panel { display: block; min-height: 0; padding: clamp(90px, 10vw, 150px) 0; background: #080b12; }
 .work-route-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 52px 10vw; align-items: end; }
 .work-route-grid > .concept-work-grid { grid-column: 1 / -1; width: 100%; margin-top: clamp(10px, 3vw, 34px); }
-.work-route-grid > .concept-work-grid .concept-work-card:last-child .concept-work-copy { background: #0e1624; }
+.work-route-grid > .concept-work-grid .concept-work-reveal:last-child .concept-work-card .concept-work-copy { background: #0e1624; }
 .work-route-grid > .concept-work-grid .concept-work-copy h3 { color: #f7fbff; }
 .work-route-grid > .concept-work-grid .concept-work-copy > span { color: #b8c8dd; }
 
@@ -409,7 +409,7 @@
 .home-about-shell { position: relative; }
 .home-about-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(250px, .48fr); gap: 16px clamp(32px, 7vw, 100px); align-items: end; margin-bottom: clamp(34px, 4.5vw, 64px); border-bottom: 1px solid #17335424; padding-bottom: 22px; }
 .home-about-heading .section-label { grid-column: 1 / -1; margin: 0; color: #52708e; }
-.home-about-heading h2 { margin: 0; color: #111b29; font-family: var(--sans); font-size: clamp(56px, 7vw, 100px); font-weight: 650; letter-spacing: .015em; line-height: .9; text-transform: uppercase; }
+.home-about-heading h2 { margin: 0; color: #101a2c; font-family: var(--sans); font-size: clamp(40px, 5vw, 68px); font-weight: 850; letter-spacing: -.035em; line-height: 1; }
 .home-about-heading h2 em { color: #4e8cff; font-style: normal; }
 .home-about-heading > p:last-child { max-width: 350px; margin: 0 0 3px; border-left: 2px solid #d6a55c; color: #4e6074; padding-left: 17px; font-size: 15px; line-height: 1.7; }
 .home-about-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
@@ -516,7 +516,7 @@
 .home-main .work-intro h2 { font-family: var(--display); font-size: clamp(48px, 5.5vw, 80px); font-weight: 500; letter-spacing: -.04em; line-height: .98; }
 .home-main .work-intro h2 em { font-style: italic; }
 .home-main .concept-work-grid { gap: 1px; }
-.home-main .concept-work-image, .home-main .concept-work-card:last-child .concept-work-copy { border-radius: 0; }
+.home-main .concept-work-image, .home-main .concept-work-reveal:last-child .concept-work-card .concept-work-copy { border-radius: 0; }
 
 .home-practice { display: grid; grid-template-columns: 1fr 1fr; }
 .home-practice-process, .home-practice-credentials { min-width: 0; padding: clamp(54px, 7vw, 98px) clamp(28px, 6vw, 86px); }
@@ -610,7 +610,6 @@
 }
 @media (max-width: 560px) {
   .home-main .home-about { padding-block: 66px; }
-  .home-about-heading h2 { font-size: clamp(48px, 13vw, 64px); }
   .home-about-heading > p:last-child { font-size: 14px; }
   .home-about-copy, .home-about-snapshot { padding: 22px; }
   .home-about-copy h3 { font-size: clamp(36px, 10vw, 48px); }
