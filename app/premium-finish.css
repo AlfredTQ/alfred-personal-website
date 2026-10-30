@@ -1,4 +1,4 @@
-:root { --ink: #080b12; --paper: #f4f7fc; --blue: #4e8cff; --muted: #5f6f88; --hairline: #cbd8ee; --brass: #d6a55c; --ice: #eaf2ff; }
+:root { --ink: #080b12; --paper: #f4f7fc; --blue: #4e8cff; --muted: #5f6f88; --hairline: #cbd8ee; --brass: #d6a55c; --ice: #eaf2ff; --glass-surface: #ffffff16; --glass-border: #ffffff40; --glass-blur: 18px; }
 
 html { background: var(--paper); }
 body { background: radial-gradient(circle at 72% -10%, #d9e5ff 0, transparent 31rem), var(--paper); }

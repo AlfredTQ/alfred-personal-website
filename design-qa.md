@@ -55,3 +55,21 @@
 - Open: side-by-side comparison with the original bird reference is still pending (the source screenshot is no longer at its OneDrive path). Real 390 px device check still recommended.
 
 final result: passed with open follow-ups
+
+**Responsive QA pass (30 Oct 2026)**
+
+- Checked `/`, `/about`, `/services`, `/work`, `/credentials`, and `/contact` at 320, 375, 390, 768, 1024, and 1440 px browser widths (36 route/viewport combinations).
+- No horizontal overflow or missing page headings.
+- Confirmed the mobile menu opens and Escape closes it; empty inquiry forms remain invalid.
+- Added menu links to the homepage “What I help clarify”, “About”, and “Selected work” sections. The standalone `/about` and `/work` pages remain accessible from their in-page calls to action. The tablet-width menu collapses before its longer labels crowd the header.
+- Added the documented Next.js 16 `data-scroll-behavior="smooth"` opt-in to suppress the route-transition smooth-scroll warning.
+- Inner-page opening sections now fill at least the viewport below the header; the work hero includes labelled previews using the existing concept studies, and phone layouts use tighter card spacing.
+- Reveal transitions keep content readable while the entrance animation initializes.
+- Follow-up remains: review approved case studies, verified credential links, contact delivery configuration, and deployment details when supplied.
+
+**About and work viewport QA (30 Oct 2026)**
+
+- Confirmed the homepage, About, and Selected Work opening sections fill the desktop viewport at 1440 × 900.
+- At 390 × 844, the standalone About and Selected Work heroes both fill the available area beneath the fixed navigation; tightened the About mobile composition so its portrait and copy fit without horizontal overflow.
+- At short 320 × 740 screens, content-heavy heroes can grow beyond the viewport and scroll naturally rather than clip copy or previews.
+- The homepage About section and Selected Work introduction now each reserve a viewport-height opening; concept-study cards continue below the Selected Work introduction as scrollable content.

@@ -18,6 +18,7 @@ import './bird-reference-hero.css';
 import './combined-home.css';
 import './portfolio-pages.css';
 import './contact-form-modern.css';
+import './navigation-responsive.css';
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -32,5 +33,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}</body></html>;
+  return <html lang="en" data-scroll-behavior="smooth"><body>{children}</body></html>;
 }

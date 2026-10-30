@@ -9,7 +9,7 @@
 .reference-stage .hero .eyebrow span { width: 7px; height: 7px; background: #d6a55c; }
 .reference-stage .hero h1 { max-width: 38rem; margin: 18px 0 26px; color: #fff; font-size: clamp(54px, 5.25vw, 96px); font-weight: 900; letter-spacing: -.078em; line-height: .9; text-transform: uppercase; text-shadow: none; }
 .reference-stage .hero h1 em { color: #67a7ff; font-style: normal; }
-.reference-stage .hero .lede { max-width: 26rem; color: #f5f1ebd9; font-size: clamp(14px, 1vw, 17px); font-weight: 500; line-height: 1.62; }
+.reference-stage .hero .lede { max-width: 26rem; color: #f5f1ebd9; font-size: clamp(14px, 1vw, 17px); font-weight: 500; line-height: 1.62; text-shadow: none; }
 .reference-stage .hero-actions { margin-top: 25px; }
 .reference-stage .hero .text-action { border-color: #67a7ff; background: #ffffff0f; color: #fff; }
 .reference-stage .hero .text-action span { color: #67a7ff; }
@@ -78,8 +78,9 @@
 .proof-action:hover span { background: #67a7ff; color: #07111f; transform: rotate(45deg); }
 
 /* Concept work is deliberately labelled as exploratory until real case studies replace it. */
-.work-section { display: block; min-height: 0; padding: clamp(104px, 12vw, 174px) 0; background: radial-gradient(circle at 83% 8%, #2b5fad26 0, transparent 29rem), linear-gradient(135deg, #080b12, #0b1220); }
+.work-section { display: block; min-height: 0; padding: 0 0 clamp(80px, 9vw, 130px); background: radial-gradient(circle at 83% 8%, #2b5fad26 0, transparent 29rem), linear-gradient(135deg, #080b12, #0b1220); }
 .home-main .work-section > .shell { width: min(1320px, calc(100% - clamp(48px, 9vw, 160px))); margin-inline: auto; }
+.home-main .work-intro { min-height: max(790px, calc(100svh - 90px)); align-content: center; padding-block: clamp(72px, 9vw, 128px); }
 .concept-work-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(14px, 2vw, 28px); margin-top: clamp(58px, 7vw, 104px); }
 .concept-work-card { grid-column: span 5; min-width: 0; }
 .concept-work-card:first-child { grid-column: span 7; }
@@ -98,7 +99,8 @@
 /* The content sections should feel deliberately paced, not stretched into empty full-screen panels. */
 .home-main > .section, .home-main > .contact-section { display: block; min-height: 0; width: 100%; }
 .home-main > .section > .shell, .home-main > .contact-section > .shell { width: min(1320px, calc(100% - clamp(48px, 9vw, 160px))); }
-.home-main .intro { isolation: isolate; overflow: hidden; padding: clamp(106px, 12vw, 178px) 0; background: linear-gradient(120deg, #f8fbff, #edf4ff); }
+.home-main .intro { isolation: isolate; display: flex; min-height: max(790px, calc(100svh - 90px)); align-items: center; overflow: hidden; padding: clamp(106px, 12vw, 178px) 0; background: linear-gradient(120deg, #f8fbff, #edf4ff); }
+.home-main .intro > .shell { width: min(1320px, calc(100% - clamp(48px, 9vw, 160px))); }
 .home-main .intro::before { content: ''; position: absolute; z-index: 0; top: 0; right: 7vw; bottom: 0; width: min(38vw, 620px); background: linear-gradient(135deg, #4e8cff0c, transparent 65%); transform: skewX(-15deg); }
 .home-main .intro .section-label { margin-bottom: clamp(38px, 5vw, 76px); color: #3f7ae8; }
 .home-main .intro-grid { grid-template-columns: minmax(0, 1.05fr) minmax(300px, .65fr); gap: clamp(54px, 11vw, 190px); align-items: end; }
@@ -204,7 +206,7 @@
   .concept-work-image { min-height: 310px; }
   .concept-work-card:last-child .concept-work-copy { min-height: 0; border-top: 0; border-left: 1px solid #ffffff1f; }
   .home-main > .section > .shell, .home-main > .contact-section > .shell { width: calc(100% - 48px); }
-  .home-main .work-section > .shell { width: calc(100% - 48px); }
+  .home-main .work-section > .shell, .home-main .intro > .shell { width: calc(100% - 48px); }
   .home-main .intro { padding: 84px 0; }
   .home-main .intro-grid, .home-main .credentials-layout, .home-main .contact-layout { grid-template-columns: 1fr; gap: 38px; }
   .home-main .intro .section-label { margin-bottom: 34px; }

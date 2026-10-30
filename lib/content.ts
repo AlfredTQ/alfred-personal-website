@@ -1,11 +1,15 @@
 export const contactEmail = 'alfredtackiequaye@gmail.com';
+export const contactPhone = '+233 240 791 866';
+export const contactPhoneHref = '+233240791866';
+export const contactLocation = 'Accra, Ghana';
 
-// Keep the navigation and the corresponding home-page sections in the same language.
+// Keep shared navigation labels and destinations consistent across routes.
 export const navigation = [
   ['Home', '/'],
-  ['About', '/about'],
+  ['What I help clarify', '/#clarify'],
+  ['About', '/#about'],
   ['Capabilities', '/services'],
-  ['Selected work', '/work'],
+  ['Selected work', '/#work'],
   ['Credentials', '/credentials'],
 ] as const;
 

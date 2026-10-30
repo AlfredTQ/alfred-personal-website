@@ -25,6 +25,7 @@ export function Reveal({ children, className = '' }: { children: ReactNode; clas
     const node = element.current;
     const reducedMotion = typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!node || reducedMotion || typeof IntersectionObserver === 'undefined') { node?.classList.add('is-visible'); return; }
+    node.classList.add('reveal-pending');
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) { node.classList.add('is-visible'); observer.unobserve(node); }
     }, { threshold: 0.12 });
