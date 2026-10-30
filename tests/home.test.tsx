@@ -14,8 +14,8 @@ describe('Home page', () => {
     render(<Home />);
     expect(screen.getByRole('heading', { name: /design clarity.*moves work forward/i })).toBeInTheDocument();
     const conversationLinks = screen.getAllByRole('link', { name: /start a conversation/i });
-    expect(conversationLinks).toHaveLength(2);
-    expect(conversationLinks.find((link) => link.classList.contains('hero-contact-disc'))).toHaveAttribute('href', '/#contact');
+    expect(conversationLinks).toHaveLength(1);
+    expect(conversationLinks[0]).toHaveAttribute('href', '/#contact');
     expect(screen.getByRole('form')).toBeInTheDocument();
   });
 
@@ -25,7 +25,8 @@ describe('Home page', () => {
     expect(screen.getByRole('heading', { name: /about me/i })).toBeInTheDocument();
     expect(screen.getByRole('complementary', { name: /areas of practice/i })).toBeInTheDocument();
     const aboutPractice = screen.getByRole('complementary', { name: /areas of practice/i });
-    expect(aboutPractice).toHaveTextContent('Visual identity');
+    expect(aboutPractice).toHaveTextContent('Brand & visual systems');
+    expect(aboutPractice).toHaveTextContent('Digital strategy');
     expect(aboutPractice).toHaveTextContent('Data storytelling');
     expect(screen.getByRole('link', { name: /explore my capabilities/i })).toHaveAttribute('href', '/#services');
     const aboutTools = screen.getByRole('group', { name: /tools i use/i });
@@ -36,6 +37,9 @@ describe('Home page', () => {
     expect(aboutTools).toHaveTextContent('Fabric');
     expect(aboutTools).toHaveTextContent('Security');
     expect(screen.getByRole('heading', { name: /what i can do for your work/i })).toBeInTheDocument();
+    expect(document.querySelector('.proof-intro .section-label')).toHaveTextContent('How I help');
+    expect(screen.getByText('Services', { selector: '.home-section-heading .section-label' })).toBeInTheDocument();
+    expect(screen.getByText(/social content.*channel planning/i)).toBeInTheDocument();
     const serviceLinks = screen.getAllByRole('link', { name: /discuss this service/i });
     expect(serviceLinks).toHaveLength(4);
     expect(serviceLinks.every((link) => link.getAttribute('href') === '#contact')).toBe(true);
@@ -68,22 +72,28 @@ describe('Home page', () => {
     expect([...document.querySelectorAll('#primary-nav > a')].map((link) => link.textContent?.trim())).toEqual([
       'Home',
       'About',
-      'What I help clarify',
-      'Capabilities',
+      'How I help',
+      'Services',
       'Selected work',
-      'Credentials',
+      'Certifications',
       'Contact',
       'Start a conversation ↗',
+      'Chat on WhatsApp',
     ]);
     expect(document.querySelector('#primary-nav a[href="/#main"]')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /^About$/ })).toHaveAttribute('href', '/#about');
-    expect(screen.getByRole('link', { name: 'What I help clarify' })).toHaveAttribute('href', '/#clarify');
+    expect(screen.getByRole('link', { name: 'How I help' })).toHaveAttribute('href', '/#clarify');
     expect(screen.getByRole('link', { name: 'Selected work' })).toHaveAttribute('href', '/#work');
-    expect(screen.getByRole('link', { name: 'Capabilities' })).toHaveAttribute('href', '/#services');
+    expect(screen.getByRole('link', { name: 'Services' })).toHaveAttribute('href', '/#services');
     expect(screen.queryByRole('link', { name: 'Process' })).not.toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Credentials' })).toHaveAttribute('href', '/#credentials');
+    expect(screen.getByRole('link', { name: 'Certifications' })).toHaveAttribute('href', '/#credentials');
     expect(screen.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '/#contact');
     expect(document.querySelector('#primary-nav .nav-cta')).toHaveAttribute('href', '/#contact');
+    expect(screen.getByRole('link', { name: 'Chat on WhatsApp' })).toHaveAttribute(
+      'href',
+      expect.stringMatching(/^https:\/\/wa\.me\/233240791866\?text=/),
+    );
+    expect(screen.getByRole('link', { name: 'Chat on WhatsApp' })).toHaveAttribute('target', '_blank');
     expect(document.getElementById('clarify')).toBeInTheDocument();
     expect(document.getElementById('about')).toBeInTheDocument();
     expect(document.getElementById('work')).toBeInTheDocument();

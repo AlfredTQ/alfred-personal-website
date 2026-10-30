@@ -1,23 +1,24 @@
 export const contactEmail = 'alfredtackiequaye@gmail.com';
 export const contactPhone = '+233 240 791 866';
 export const contactPhoneHref = '+233240791866';
+export const contactWhatsappHref = 'https://wa.me/233240791866?text=Hello%20Alfred%2C%20I%27d%20like%20to%20discuss%20a%20project.';
 export const contactLocation = 'Accra, Ghana';
 
 // Keep shared navigation labels and destinations consistent across routes.
 export const navigation = [
   ['Home', '/#main'],
   ['About', '/#about'],
-  ['What I help clarify', '/#clarify'],
-  ['Capabilities', '/#services'],
+  ['How I help', '/#clarify'],
+  ['Services', '/#services'],
   ['Selected work', '/#work'],
-  ['Credentials', '/#credentials'],
+  ['Certifications', '/#credentials'],
   ['Contact', '/#contact'],
 ] as const;
 
 export const services = [
   { number: '01', title: 'Brand & visual systems', description: 'Logo and identity design, campaign direction, and communication systems that help people recognise the message and trust what they see.', tag: 'Recognisable by design' },
   { number: '02', title: 'UI/UX design', description: 'Digital journeys shaped around real tasks—clearer paths, calmer decisions, and experiences people can use with confidence.', tag: 'Useful by design' },
-  { number: '03', title: 'Digital strategy', description: 'A practical point of view on what to say, where to say it, and how each digital touchpoint should work together.', tag: 'Made to connect' },
+  { number: '03', title: 'Digital strategy', description: 'Practical guidance on messaging, social content, and channel planning—so every digital touchpoint works together.', tag: 'Made to connect' },
   { number: '04', title: 'Data storytelling', description: 'Power BI reports and visual analysis that turn complex information into an informed next step.', tag: 'Evidence, made useful' },
 ];
 

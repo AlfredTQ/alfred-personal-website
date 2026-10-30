@@ -60,12 +60,11 @@ export default function Home() {
       <div className="reference-stage">
         <HeroMotion>
           <div className="hero-copy">
-            <p className="eyebrow"><span />Graphic design · UI/UX · Social media · Power BI</p>
+            <p className="eyebrow"><span />Brand &amp; visual systems · UI/UX design · Digital strategy · Data storytelling</p>
             <h1>Design clarity<br />that moves<br /><em>work forward.</em></h1>
-            <p className="lede">I help ambitious organisations turn complex ideas into clear brands, useful digital experiences, engaging social content, and decision-ready data stories.</p>
+            <p className="lede">I help ambitious organisations build clear brands, useful digital experiences, thoughtful digital strategies—including social content—and decision-ready data stories.</p>
             <div className="hero-actions"><Link href="/#work" className="text-action">View selected work <span>↗</span></Link><Link href="/#about" className="text-action">About me <span>↗</span></Link></div>
           </div>
-          <Link href="/#contact" className="hero-contact-disc">Start a<br />conversation <span>↗</span></Link>
           <figure className="reference-hero-media">
             <Image className="hero-ambient" src="/images/hero-editorial-studio.png" alt="" fill priority sizes="100vw" />
             <span className="hero-name-layer" aria-hidden="true">ALFRED</span>
@@ -119,10 +118,10 @@ export default function Home() {
               </div>
               <span><b>Alfred Tackie-Quaye</b><small>Designer · Analyst</small></span>
             </Reveal>
-            <div className="home-about-copy">
+            <Reveal className="home-about-copy">
               <Reveal><p className="section-label">Designer. Analyst.</p><h3>Clarity builder.</h3></Reveal>
               <Reveal className="home-about-story">
-                <p>I’m Alfred Tackie-Quaye, a Ghana-based creative and data professional working across graphic design, UI/UX, social media management, and Power BI analytics.</p>
+                <p>I’m Alfred Tackie-Quaye, a Ghana-based creative and data professional working across brand and visual systems, UI/UX design, digital strategy, and data storytelling.</p>
                 <p>I bring visual thinking and evidence-informed problem solving together to make ideas easier to understand, experiences easier to use, and information easier to act on.</p>
                 <Link href="/#services" className="text-action">Explore my capabilities <span>↗</span></Link>
               </Reveal>
@@ -130,14 +129,14 @@ export default function Home() {
                 <div><strong>04</strong><span>Connected disciplines</span></div>
                 <div><strong>01</strong><span>Clear goal: move work forward</span></div>
               </div>
-            </div>
+            </Reveal>
             <aside className="home-about-snapshot" aria-label="Areas of practice">
               <p className="section-label">Areas of practice</p>
               <ul>
-                <li><span>01</span><div><strong>Visual identity</strong><small>Graphic design &amp; brand systems</small></div></li>
-                <li><span>02</span><div><strong>Digital experiences</strong><small>UI/UX design &amp; strategy</small></div></li>
-                <li><span>03</span><div><strong>Social media</strong><small>Content &amp; communication</small></div></li>
-                <li><span>04</span><div><strong>Data storytelling</strong><small>Power BI &amp; useful insights</small></div></li>
+                <li><span>01</span><div><strong>Brand &amp; visual systems</strong><small>Identity, campaigns &amp; communication</small></div></li>
+                <li><span>02</span><div><strong>UI/UX design</strong><small>Digital experiences shaped around real tasks</small></div></li>
+                <li><span>03</span><div><strong>Digital strategy</strong><small>Channel planning &amp; social content direction</small></div></li>
+                <li><span>04</span><div><strong>Data storytelling</strong><small>Power BI &amp; decision-ready insights</small></div></li>
               </ul>
               <p className="home-about-location"><span aria-hidden="true" />Based in Ghana · Available worldwide</p>
             </aside>
@@ -147,15 +146,19 @@ export default function Home() {
 
       <section className="client-proof" id="clarify" aria-labelledby="proof-title">
         <div className="shell">
-          <div className="proof-intro"><p className="section-label">What I help clarify</p><h2 id="proof-title">Make it easier to<br /><em>recognise, use, and act on.</em></h2><p>Good work should do more than look polished. It should help the right people understand the message, move through the experience, and make the next decision with confidence.</p></div>
-          <div className="proof-grid"><article><span>01</span><i className="proof-art" aria-hidden="true" /><h3>Make it recognisable.</h3><p>Brand and visual systems that give an organisation a clear, consistent presence.</p></article><article><span>02</span><i className="proof-art" aria-hidden="true" /><h3>Make it easier to use.</h3><p>Digital experiences shaped around the tasks people are actually trying to complete.</p></article><article><span>03</span><i className="proof-art" aria-hidden="true" /><h3>Make it easier to act on.</h3><p>Data stories that help information become a useful next move.</p></article></div>
+          <div className="proof-intro"><p className="section-label">How I help</p><h2 id="proof-title">Make it easier to<br /><em>recognise, use, and act on.</em></h2><p>Good work should do more than look polished. It should help the right people understand the message, move through the experience, and make the next decision with confidence.</p></div>
+          <div className="proof-grid">
+            <Reveal className="proof-tile"><article><span>01</span><i className="proof-art" aria-hidden="true" /><h3>Make it recognisable.</h3><p>Brand and visual systems that give an organisation a clear, consistent presence.</p></article></Reveal>
+            <Reveal className="proof-tile"><article><span>02</span><i className="proof-art" aria-hidden="true" /><h3>Make it easier to use.</h3><p>Digital experiences shaped around the tasks people are actually trying to complete.</p></article></Reveal>
+            <Reveal className="proof-tile"><article><span>03</span><i className="proof-art" aria-hidden="true" /><h3>Make it easier to act on.</h3><p>Data stories that help information become a useful next move.</p></article></Reveal>
+          </div>
           <div className="proof-footer"><p className="proof-note">Informed by ongoing Microsoft learning in Power BI, Fabric, and security fundamentals.</p><Link href="/#services" className="proof-action">Explore capabilities <span>↗</span></Link></div>
         </div>
       </section>
 
       <section className="home-services section" id="services" aria-labelledby="services-title">
         <div className="shell">
-          <div className="home-section-heading"><p className="section-label">Capabilities</p><h2 id="services-title">What I can do<br /><em>for your work.</em></h2><p>Choose one discipline or bring them together. The aim is to make the message, journey, or decision easier to move on.</p></div>
+          <div className="home-section-heading"><p className="section-label">Services</p><h2 id="services-title">What I can do<br /><em>for your work.</em></h2><p>Choose one discipline or bring them together. The aim is to make the message, journey, or decision easier to move on.</p></div>
           <div className="home-service-grid">{services.map((service, index) => <Reveal key={service.number} className="home-service-card"><article><div className="home-service-card-top"><span>{service.number}</span><span className="home-service-icon"><CapabilityIcon index={index} /></span></div><h3>{service.title}</h3><p>{service.description}</p><CapabilityInquiryLink service={service.title} /></article></Reveal>)}</div>
         </div>
       </section>
@@ -182,7 +185,7 @@ export default function Home() {
           <div className="home-practice-inner">
             <p className="section-label">Skills &amp; learning</p><h2>Tools, knowledge<br />&amp; credentials</h2>
             <p className="home-practice-summary">Ongoing learning in analytics, cloud, security, and data engineering supports informed, practical design decisions.</p>
-            <div className="home-credential-list">{credentials.map(([code, title]) => <article className="home-credential-card" key={code}><div className="home-credential-card-top">{code === 'ITIL' ? <span className="itil-mark" role="img" aria-label="ITIL certification">ITIL</span> : <span className="microsoft-mark" role="img" aria-label="Microsoft logo"><i /><i /><i /><i /></span>}<span className="home-credential-code">{code}</span></div><strong>{title}</strong></article>)}</div>
+            <div className="home-credential-list">{credentials.map(([code, title]) => <Reveal className="home-credential-reveal" key={code}><article className="home-credential-card"><div className="home-credential-card-top">{code === 'ITIL' ? <span className="itil-mark" role="img" aria-label="ITIL certification">ITIL</span> : <span className="microsoft-mark" role="img" aria-label="Microsoft logo"><i /><i /><i /><i /></span>}<span className="home-credential-code">{code}</span></div><strong>{title}</strong></article></Reveal>)}</div>
             <Link href="/#credentials" className="text-action">Credentials overview <span>↗</span></Link>
           </div>
         </div>
