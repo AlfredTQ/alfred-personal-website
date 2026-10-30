@@ -1,11 +1,5 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { PageFrame } from '@/components/page-frame';
-import { Reveal } from '@/components/live-experience';
-import { services } from '@/lib/content';
-
-export const metadata: Metadata = { title: 'Capabilities', description: 'Brand and visual systems, UI/UX design, digital strategy and data storytelling — four ways to create clarity.', alternates: { canonical: '/services' } };
+import { redirect } from 'next/navigation';
 
 export default function ServicesPage() {
-  return <PageFrame><section className="capability-route-hero"><div className="shell"><div className="capability-route-intro"><Reveal><p className="section-label">02 / Capabilities</p><h1>One practice.<br /><em>Four ways to create clarity.</em></h1></Reveal><Reveal><p>Choose one discipline or combine them. The goal is the same: make the message, journey, or decision easier to move on.</p></Reveal></div><div className="capability-route-grid">{services.map((service, index) => <Reveal key={service.number} className="capability-route-card"><article><div><span>{String(index + 1).padStart(2, '0')}</span><i aria-hidden="true">↗</i></div><h2>{service.title}</h2><p>{service.description}</p><small>{service.tag}</small></article></Reveal>)}</div></div></section><section className="process-panel"><div className="shell"><p className="section-label">A practical engagement</p><div className="process-intro"><h2>From uncertainty to<br /><em>a useful direction.</em></h2><p>The process flexes around the brief, but it always begins by clarifying what matters and ends with work you can confidently use.</p></div><div className="process-grid"><article><span>01 / Clarify</span><h3>Frame the real need.</h3><p>Define the audience, the message, the decisions, and the practical outcome the work needs to support.</p></article><article><span>02 / Make</span><h3>Explore with intent.</h3><p>Develop focused directions, test the important choices, and build a coherent system around the strongest route.</p></article><article><span>03 / Equip</span><h3>Leave it usable.</h3><p>Package the work with clear guidance, useful files, and the context needed for the next person to carry it forward.</p></article></div><Link className="button button-blue capability-route-cta" href="/contact">Tell me about the challenge <span>↗</span></Link></div></section></PageFrame>;
+  redirect('/#services');
 }

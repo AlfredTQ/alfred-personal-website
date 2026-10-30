@@ -1,11 +1,25 @@
 'use client';
 
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
+import { capabilitySelectionEvent } from '@/components/capability-inquiry-link';
 import { contactEmail } from '@/lib/content';
 
 export function ContactPanel() {
+  const [selectedService, setSelectedService] = useState('');
   const [notice, setNotice] = useState('');
   const [sending, setSending] = useState(false);
+
+  useEffect(() => {
+    function selectService(event: Event) {
+      if (event instanceof CustomEvent && typeof event.detail === 'string') {
+        setSelectedService(event.detail);
+      }
+    }
+
+    window.addEventListener(capabilitySelectionEvent, selectService);
+    return () => window.removeEventListener(capabilitySelectionEvent, selectService);
+  }, []);
+
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
@@ -18,6 +32,7 @@ export function ContactPanel() {
       const response = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(fields) });
       if (response.ok) {
         form.reset();
+        setSelectedService('');
         setNotice('Thank you — your message has been sent. I’ll reply by email.');
         return;
       }
@@ -38,7 +53,7 @@ export function ContactPanel() {
   }
   return <form className="contact-form" aria-label="Project inquiry" onSubmit={submit} noValidate><div className="form-title"><div><span>Project inquiry</span><b>Tell me what needs<br />to become clearer.</b></div><p><i aria-hidden="true" />Available for selected collaborations</p></div>
     <input className="sr-only" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" /><div className="form-field-row"><label className="form-field"><span>Name</span><input name="name" autoComplete="name" required placeholder="Your name" /></label><label className="form-field"><span>Email</span><input name="email" type="email" autoComplete="email" required placeholder="you@company.com" /></label></div>
-    <label className="form-field"><span>Area of interest</span><select name="service" required defaultValue=""><option value="" disabled>Select an area</option><option>Brand &amp; visual systems</option><option>UI/UX design</option><option>Digital strategy</option><option>Data storytelling</option><option>Other collaboration</option></select></label>
+    <label className="form-field"><span>Area of interest</span><select name="service" required value={selectedService} onChange={(event) => setSelectedService(event.target.value)}><option value="" disabled>Select an area</option><option>Brand &amp; visual systems</option><option>UI/UX design</option><option>Digital strategy</option><option>Data storytelling</option><option>Other collaboration</option></select></label>
     <label className="form-field"><span>Project note</span><textarea name="message" required minLength={10} rows={5} placeholder="What are you trying to make clearer, easier, or more useful?" /></label>
     <div className="form-bottom"><p>Your details are only used to reply to this inquiry.</p><button className="button button-dark" type="submit" disabled={sending}><span>{sending ? 'Sending…' : 'Send message'}</span><i aria-hidden="true">↗</i></button></div><p className="form-notice" role="status">{notice}</p>
   </form>;

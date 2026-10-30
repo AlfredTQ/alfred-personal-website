@@ -1,12 +1,42 @@
-.site-header nav {
-  font-weight: 500;
+.site-header .nav-wrap {
+  gap: clamp(18px, 2.2vw, 32px);
 }
 
-.site-header nav .nav-cta {
+.site-header nav {
+  flex: 1;
+  justify-content: flex-end;
+  gap: clamp(10px, 1.15vw, 17px);
+  color: #f7fbff;
+  font-size: 15px;
   font-weight: 600;
 }
 
-@media (min-width: 801px) and (max-width: 1120px) {
+.site-header nav a:not(.nav-cta) {
+  color: #f1f5fc;
+  line-height: 1.4;
+  text-shadow: none;
+  white-space: nowrap;
+}
+
+.site-header nav a:not(.nav-cta):hover,
+.site-header nav a:not(.nav-cta):focus-visible {
+  color: #8bc0ff;
+}
+
+.site-header nav .nav-cta {
+  flex-shrink: 0;
+  margin-left: clamp(2px, .7vw, 10px);
+  padding: 12px 15px;
+  font-size: 14px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.site-header .logo {
+  flex-shrink: 0;
+}
+
+@media (min-width: 801px) and (max-width: 1200px) {
   .site-header .menu-button {
     display: grid;
     width: 44px;
@@ -34,7 +64,7 @@
   .site-header nav {
     position: absolute;
     z-index: 16;
-    top: 100%;
+    top: calc(100% - 1px);
     right: clamp(24px, 4vw, 48px);
     left: auto;
     display: none;
@@ -43,7 +73,9 @@
     flex-direction: column;
     gap: 16px;
     background: #0b1322;
+    color: #f7fbff;
     padding: 22px;
+    border: 1px solid #ffffff24;
     box-shadow: 0 16px 32px #00000038;
   }
 
@@ -52,11 +84,69 @@
   }
 
   .site-header nav a:not(.nav-cta) {
-    color: #e6efff;
+    color: #f1f5fc;
+    font-size: 15px;
   }
 
   .site-header nav .nav-cta {
     display: flex;
     justify-content: space-between;
+    margin-left: 0;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 800px) {
+  .site-header .nav-wrap {
+    gap: 12px;
+  }
+
+  .site-header nav {
+    top: 100%;
+    right: 0;
+    left: 0;
+    width: 100%;
+    align-items: stretch;
+    gap: 0;
+    border: 1px solid #ffffff24;
+    border-top: 0;
+    background: #080b12f7;
+    color: #f7fbff;
+    padding: 8px 20px 20px;
+    box-shadow: 0 16px 32px #00000038;
+  }
+
+  .site-header nav a:not(.nav-cta) {
+    display: block;
+    border-bottom: 1px solid #ffffff20;
+    color: #f1f5fc;
+    padding: 14px 2px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .site-header nav .nav-cta {
+    justify-content: space-between;
+    margin: 14px 0 0;
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+
+  .hero-site-header .menu-button {
+    border-color: #ffffffa8;
+    background: #080b12;
+  }
+
+  .hero-site-header .menu-button i {
+    background: #f7fbff;
+  }
+
+  .site-header:not(.hero-site-header) .menu-button {
+    border-color: #ffffffa8;
+    background: #080b12;
+  }
+
+  .site-header:not(.hero-site-header) .menu-button i {
+    background: #f7fbff;
   }
 }

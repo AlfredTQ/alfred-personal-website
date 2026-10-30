@@ -25,7 +25,7 @@ export function SiteHeader({ variant = '' }: { variant?: string }) {
     <button className="menu-button" aria-expanded={open} aria-controls="primary-nav" onClick={() => setOpen(!open)}><span className="sr-only">Toggle menu</span><i /><i /></button>
     <nav id="primary-nav" data-open={open} aria-label="Primary navigation">
       {navigation.map(([label, href]) => <Link key={href} href={href} scroll aria-current={pathname === href ? 'page' : undefined} onClick={closeMenu}>{label}</Link>)}
-      <Link className="nav-cta" href="/contact" scroll onClick={closeMenu}>Start a conversation <span>↗</span></Link>
+      <Link className="nav-cta" href="/#contact" scroll onClick={closeMenu}>Start a conversation <span>↗</span></Link>
     </nav>
   </div></header>;
 }

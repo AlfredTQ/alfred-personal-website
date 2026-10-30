@@ -224,12 +224,12 @@
 @media (max-width: 600px) {
   .reference-stage .hero { min-height: 790px; }
   .hero-site-header .nav-wrap { width: calc(100% - 40px); }
-  .reference-stage .hero-copy { right: 20px; bottom: 48px; left: 20px; width: auto; }
+  .reference-stage .hero-copy { right: 20px; bottom: 82px; left: 20px; width: auto; }
   .reference-stage .hero .eyebrow { font-size: 10px; letter-spacing: .015em; }
   .reference-stage .hero h1 { max-width: 18rem; margin: 15px 0 20px; font-size: clamp(52px, 13.5vw, 70px); letter-spacing: -.08em; line-height: .9; }
   .reference-stage .hero .lede { max-width: 19rem; font-size: 15px; line-height: 1.58; }
-  .reference-stage .hero-actions { margin-top: 21px; }
-  .reference-stage .hero .text-action { font-size: 13px; }
+  .reference-stage .hero-actions { flex-direction: row; flex-wrap: nowrap; gap: 8px; margin-top: 21px; }
+  .reference-stage .hero .text-action { padding: 12px 8px; font-size: 12px; white-space: nowrap; }
   .reference-stage .reference-hero-media > img.hero-person { top: 74px; right: -42%; width: 125%; height: 69%; object-position: 58% top; }
   .reference-stage .reference-hero-media::after { background: linear-gradient(0deg, #050504 0%, #050504ec 25%, #0505046e 49%, transparent 73%), linear-gradient(90deg, #050504a1, transparent 83%) !important; }
   .hero-people { top: 104px; right: 20px; font-size: 10px; }

@@ -5,12 +5,14 @@ export const contactLocation = 'Accra, Ghana';
 
 // Keep shared navigation labels and destinations consistent across routes.
 export const navigation = [
-  ['Home', '/'],
-  ['What I help clarify', '/#clarify'],
+  ['Home', '/#main'],
   ['About', '/#about'],
-  ['Capabilities', '/services'],
+  ['What I help clarify', '/#clarify'],
+  ['Capabilities', '/#services'],
   ['Selected work', '/#work'],
-  ['Credentials', '/credentials'],
+  ['Process', '/#process'],
+  ['Credentials', '/#credentials'],
+  ['Contact', '/#contact'],
 ] as const;
 
 export const services = [
