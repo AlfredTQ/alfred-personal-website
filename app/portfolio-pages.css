@@ -237,3 +237,21 @@
   .route-hero-grid.has-aside { grid-template-columns: 1fr; }
   .route-hero h1, .credentials-route-hero h1, .about-hero-copy h1 { font-size: clamp(46px, 12.5vw, 68px); }
 }
+
+/* ---- Home: one section-header pattern, aligned to the same content width. ---- */
+.client-proof .shell { width: min(1320px, calc(100% - clamp(48px, 9vw, 160px))); }
+.home-main .section-label { display: block; width: max-content; margin-top: 0; border: 1px solid color-mix(in srgb, currentColor 32%, transparent); border-radius: 99px; padding: 8px 12px; }
+.home-main .intro .section-label { margin-bottom: clamp(30px, 4vw, 52px); }
+.home-main .intro-grid { grid-template-columns: minmax(0, 1.25fr) minmax(300px, .6fr); gap: clamp(54px, 9vw, 150px); align-items: end; }
+.home-main .intro-grid h2 { max-width: 920px; font-size: clamp(48px, 5.4vw, 88px); }
+.home-main .intro-grid > div { max-width: 400px; }
+.home-main .intro-grid p { font-size: clamp(15px, 1.05vw, 17px); }
+.intro-specialisms { display: flex; flex-wrap: wrap; gap: 10px; margin-top: clamp(44px, 5vw, 72px); border-top: 1px solid #4e8cff30; padding-top: 24px; }
+.intro-specialisms span { border: 1px solid #b9cdf0; border-radius: 99px; background: #ffffffb0; color: #3f5f95; padding: 9px 15px; font-size: 13px; font-weight: 700; }
+.proof-note { font-size: 13px; line-height: 1.55; }
+.proof-action { font-size: 14px; }
+.proof-grid p { font-size: 15px; }
+@media (max-width: 800px) {
+  .home-main .intro-grid { grid-template-columns: 1fr; }
+  .home-main .intro-grid h2 { font-size: clamp(44px, 12vw, 64px); }
+}
