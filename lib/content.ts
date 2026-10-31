@@ -21,21 +21,25 @@ export const books = [
     title: 'AI Knowledge-to-Income Blueprint',
     description: 'A practical guide to turning skills into digital income with AI, even without a technical background.',
     image: '/images/books/ai-knowledge-to-income-blueprint.jpg',
+    motion: 'blueprint',
   },
   {
     title: 'AI Prompt Engineering Mastery',
     description: 'A guide to designing stronger prompts and AI workflows for clearer, more useful results.',
     image: '/images/books/ai-prompt-engineering-mastery.jpg',
+    motion: 'prompt',
   },
   {
     title: 'AI Productivity Mastery',
     description: 'A practical system for using AI to improve focus, execution, and high-impact results.',
     image: '/images/books/ai-productivity-mastery.jpg',
+    motion: 'productivity',
   },
   {
     title: 'Generational Assignment',
     description: 'A faith-centered reflection on discovering your purpose, serving your generation, and building a lasting legacy.',
     image: '/images/books/generational-assignment.jpg',
+    motion: 'legacy',
   },
 ] as const;
 

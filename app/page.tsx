@@ -68,6 +68,12 @@ export default function Home() {
           <figure className="reference-hero-media">
             <Image className="hero-ambient" src="/images/hero-editorial-studio.png" alt="" fill priority sizes="100vw" />
             <span className="hero-name-layer" aria-hidden="true">ALFRED</span>
+            <div className="hero-motion-graphic" aria-hidden="true">
+              <span className="hero-motion-orbit hero-motion-orbit-outer" />
+              <span className="hero-motion-orbit hero-motion-orbit-inner" />
+              <i className="hero-motion-signal hero-motion-signal-one" />
+              <i className="hero-motion-signal hero-motion-signal-two" />
+            </div>
             <Image className="hero-person" src="/images/alfred-hero-shoulders.png" alt="Alfred Tackie-Quaye, Creative Designer and Data Analyst" fill priority sizes="(max-width: 800px) 100vw, 58vw" />
             <div className="hero-people" aria-label="Available for selected collaborations"><span>Available for projects</span><b>Open</b></div>
             <div className="hero-card hero-card-design"><span>Brand identity &amp; graphic design</span><strong>Make the right idea recognisable</strong><i>↗</i></div>
@@ -178,9 +184,10 @@ export default function Home() {
           <div className="home-book-grid">
             {books.map((book) => (
               <Reveal className="home-book-reveal" key={book.title}>
-                <article className="home-book-card">
+                <article className={`home-book-card home-book-card-${book.motion}`}>
                   <div className="home-book-cover">
                     <Image src={book.image} alt={`${book.title} book cover`} fill sizes="(max-width: 560px) 50vw, (max-width: 1000px) 50vw, 25vw" />
+                    <span className="home-book-motion" aria-hidden="true" />
                   </div>
                   <div className="home-book-copy">
                     <p>Written by Alfred Tackie-Quaye</p>

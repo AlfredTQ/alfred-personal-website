@@ -1,9 +1,9 @@
 .home-main { background: #e9ecee; }
 .home-main { overflow: clip; }
-.reference-stage { position: relative; padding: 5px; background: #e9ecee; }
+.reference-stage { position: relative; padding: 0; background: #080807; }
 .reference-stage::before { display: none; }
 
-.reference-stage .hero { min-height: calc(100svh - 10px); border-radius: 0; background: #080807; box-shadow: none; }
+.reference-stage .hero { min-height: 100svh; border-radius: 0; background: #080807; box-shadow: none; }
 .reference-stage .hero-copy { z-index: 8; top: 28%; right: auto; bottom: auto; left: clamp(52px, 7.5vw, 142px); width: min(38rem, 43vw); border: 0; border-radius: 0; background: transparent; box-shadow: none; padding: 0; backdrop-filter: none; }
 .reference-stage .hero .eyebrow { color: #ffffffc4; font-size: 12px; font-weight: 700; letter-spacing: .02em; text-transform: none; }
 .reference-stage .hero .eyebrow span { width: 7px; height: 7px; background: #d6a55c; }
@@ -26,6 +26,9 @@
   0%, 100% { transform: translate3d(0, 0, 0) scale(.96); }
   50% { transform: translate3d(-3%, 2%, 0) scale(1.05); }
 }
+@keyframes hero-motion-turn { to { rotate: 1turn; } }
+@keyframes hero-motion-sweep { 0%, 100% { opacity: .22; translate: -4% 0; } 50% { opacity: .78; translate: 4% 0; } }
+@keyframes hero-motion-pulse { 0%, 100% { box-shadow: 0 0 0 0 #67a7ff00, 0 0 10px #67a7ff80; } 50% { box-shadow: 0 0 0 12px #67a7ff00, 0 0 18px #67a7ffbd; } }
 @keyframes hero-portrait-arrive { from { opacity: 0; translate: 0 24px; } to { opacity: 1; translate: 0 0; } }
 @keyframes hero-detail-arrive { from { opacity: 0; translate: 0 12px; } to { opacity: 1; translate: 0 0; } }
 @keyframes hero-caption-arrive { from { opacity: 0; } to { opacity: 1; } }
@@ -45,6 +48,19 @@
 
 .reference-stage .reference-hero-media { background: #080807; }
 .reference-stage .reference-hero-media > img.hero-ambient { opacity: 1; filter: none; transform: none; }
+.hero-motion-graphic { position: absolute; z-index: 2; top: 8%; right: 2%; width: min(58%, 760px); aspect-ratio: 1; overflow: hidden; border-radius: 50%; pointer-events: none; opacity: .8; }
+.hero-motion-graphic::before, .hero-motion-graphic::after { position: absolute; content: ''; pointer-events: none; }
+.hero-motion-graphic::before { inset: 5%; border: 1px solid #d6a55c36; border-radius: 50%; box-shadow: inset 0 0 50px #d6a55c0b, 0 0 50px #4e8cff12; animation: hero-motion-turn 42s linear infinite; }
+.hero-motion-graphic::after { top: 48%; left: -20%; width: 140%; height: 1px; background: linear-gradient(90deg, transparent, #67a7ff00 25%, #67a7ff80 48%, #d6a55c9c 52%, transparent 76%); transform: rotate(-24deg); transform-origin: center; animation: hero-motion-sweep 8s ease-in-out infinite; }
+.hero-motion-orbit { position: absolute; display: block; border: 1px solid #67a7ff36; border-radius: 50%; }
+.hero-motion-orbit-outer { inset: 16% 8%; transform: rotate(-28deg); animation: hero-motion-turn 32s linear infinite; }
+.hero-motion-orbit-outer::after, .hero-motion-orbit-inner::after { position: absolute; width: 8px; height: 8px; border: 1px solid #fff9e8; border-radius: 50%; background: #d6a55c; box-shadow: 0 0 14px #d6a55cbd; content: ''; }
+.hero-motion-orbit-outer::after { top: 12%; left: 14%; }
+.hero-motion-orbit-inner { inset: 26% 17%; border-color: #d6a55c2e; border-style: dashed; transform: rotate(34deg); animation: hero-motion-turn 25s linear infinite reverse; }
+.hero-motion-orbit-inner::after { right: 7%; bottom: 22%; width: 6px; height: 6px; background: #67a7ff; box-shadow: 0 0 14px #67a7ffbd; }
+.hero-motion-signal { position: absolute; width: 5px; height: 5px; border-radius: 50%; background: #e8f3ff; box-shadow: 0 0 0 0 #67a7ff88, 0 0 16px #67a7ffbd; animation: hero-motion-pulse 3.8s ease-out infinite; }
+.hero-motion-signal-one { top: 24%; right: 17%; }
+.hero-motion-signal-two { bottom: 19%; left: 24%; animation-delay: -1.9s; }
 .reference-stage .reference-hero-media::before {
   position: absolute;
   z-index: 1;
@@ -216,6 +232,8 @@
   .reference-stage::before { display: none; }
   .reference-stage { padding: 0; }
   .reference-stage .hero { min-height: 850px; }
+  .hero-motion-graphic { top: 12%; right: -14%; width: 88%; opacity: .46; }
+  .hero-motion-graphic::after { opacity: .6; }
   .hero-site-header .nav-wrap { width: calc(100% - 38px); margin: auto; }
   .hero-site-header .menu-button { border: 1px solid #ffffff7d; background: #ffffff12; }
   .hero-site-header .menu-button i { background: #fff; }
@@ -336,6 +354,10 @@
   .reference-stage .reference-hero-media > img.hero-ambient,
   .reference-stage .reference-hero-media > img.hero-person,
   .reference-stage .reference-hero-media::before,
+  .hero-motion-graphic::before,
+  .hero-motion-graphic::after,
+  .hero-motion-orbit,
+  .hero-motion-signal,
   .reference-stage .hero-card,
   .reference-stage .hero-people,
   .reference-stage .reference-hero-media figcaption { animation: none; }

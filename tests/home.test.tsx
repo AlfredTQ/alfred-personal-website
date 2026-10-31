@@ -13,6 +13,7 @@ describe('Home page', () => {
   it('renders the primary message and an inquiry path', () => {
     render(<Home />);
     expect(screen.getByRole('heading', { name: /design clarity.*moves work forward/i })).toBeInTheDocument();
+    expect(document.querySelector('.hero-motion-graphic')).toHaveAttribute('aria-hidden', 'true');
     const conversationLinks = screen.getAllByRole('link', { name: /start a conversation/i });
     expect(conversationLinks).toHaveLength(1);
     expect(conversationLinks[0]).toHaveAttribute('href', '/#contact');
@@ -54,6 +55,7 @@ describe('Home page', () => {
     expect(document.querySelectorAll('.concept-work-grid > .concept-work-reveal')).toHaveLength(3);
     expect(screen.getByRole('heading', { name: /ideas, explored on the page/i })).toBeInTheDocument();
     expect(document.querySelectorAll('.home-book-card')).toHaveLength(4);
+    expect(document.querySelectorAll('.home-book-motion[aria-hidden="true"]')).toHaveLength(4);
     expect(screen.getByRole('link', { name: /ask me about my books/i })).toHaveAttribute('href', '/#contact');
     expect(screen.getByRole('heading', { name: /my approach/i })).toBeInTheDocument();
     expect(document.querySelectorAll('.process-step-reveal li')).toHaveLength(5);
