@@ -457,6 +457,25 @@
 .home-about-location { display: flex; align-items: center; gap: 9px; margin: auto 0 0; border-top: 1px solid #d6dfe8; color: #4f6277; padding-top: 16px; font-size: 11px; font-weight: 750; }
 .home-about-location span { width: 7px; height: 7px; flex: 0 0 auto; border-radius: 50%; background: #5eaf7d; box-shadow: 0 0 0 4px #5eaf7d1c; }
 
+.home-books { padding: clamp(76px, 9vw, 128px) 0; background: #edf1f4; }
+.home-books-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, .42fr); gap: 20px clamp(40px, 8vw, 110px); align-items: end; margin-bottom: clamp(34px, 4.5vw, 58px); }
+.home-books-intro .section-label { grid-column: 1 / -1; margin: 0; color: #52708e; }
+.home-books-intro h2 { grid-column: 1; margin: 0; color: #101a2c; font-size: clamp(40px, 5vw, 68px); font-weight: 850; letter-spacing: -.035em; line-height: 1; }
+.home-books-intro h2 em { color: #3f7ae8; font-style: normal; }
+.home-books-intro > p:last-child { max-width: 350px; margin: 0; color: #566781; font-size: 15px; line-height: 1.8; }
+.home-book-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.home-book-reveal { min-width: 0; height: 100%; }
+.home-book-card { height: 100%; overflow: hidden; border: 1px solid #d5deea; background: #f8fafb; box-shadow: 0 14px 30px #13263c12, 0 3px 8px #13263c08; transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease; }
+.home-book-card:hover, .home-book-card:focus-within { transform: translateY(-5px); box-shadow: 0 20px 38px #13263c1c, 0 5px 12px #13263c0b; }
+.home-book-cover { position: relative; aspect-ratio: 2 / 3; overflow: hidden; background: #101827; }
+.home-book-cover img { object-fit: contain; }
+.home-book-copy { display: flex; min-height: 214px; flex-direction: column; align-items: flex-start; padding: clamp(16px, 1.8vw, 24px); }
+.home-book-copy > p { margin: 0 0 13px; color: #52708e; font-size: 9px; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; }
+.home-book-copy h3 { margin: 0 0 12px; color: #101a2c; font-size: clamp(18px, 1.8vw, 24px); font-weight: 800; letter-spacing: -.035em; line-height: 1.1; }
+.home-book-copy > span { color: #566781; font-size: 13px; line-height: 1.65; }
+.home-books-link { display: inline-flex; gap: 8px; align-items: center; margin-top: 30px; border-bottom: 1px solid #3f7ae8; color: #101a2c; padding-bottom: 6px; font-size: 13px; font-weight: 750; }
+.home-books-link span { color: #3f7ae8; }
+
 .home-main .home-services { padding: clamp(75px, 9vw, 128px) 0; }
 .home-section-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, .42fr); gap: 20px clamp(40px, 8vw, 110px); align-items: end; margin-bottom: clamp(36px, 5vw, 66px); }
 .home-section-heading .section-label { grid-column: 1 / -1; margin: 0; }
@@ -599,6 +618,11 @@
   .home-about-copy { gap: 25px; }
   .home-about-snapshot ul { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; }
   .home-section-heading { grid-template-columns: 1fr; gap: 18px; }
+  .home-books-intro { grid-template-columns: 1fr; gap: 18px; }
+  .home-books-intro .section-label, .home-books-intro h2 { grid-column: 1; }
+  .home-book-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .home-book-copy { min-height: 220px; padding: 18px; }
+  .home-book-copy h3 { font-size: clamp(18px, 3vw, 24px); }
   .home-section-heading .section-label, .home-section-heading h2 { grid-column: 1; }
   .home-section-heading > p:last-child { max-width: 470px; }
   .home-practice { grid-template-columns: 1fr; }
@@ -610,6 +634,12 @@
 }
 @media (max-width: 560px) {
   .home-main .home-about { padding-block: 66px; }
+  .home-books { padding-block: 66px; }
+  .home-book-grid { gap: 10px; }
+  .home-book-copy { min-height: 246px; padding: 13px; }
+  .home-book-copy > p { font-size: 8px; letter-spacing: .07em; }
+  .home-book-copy h3 { font-size: clamp(16px, 4.5vw, 20px); }
+  .home-book-copy > span { font-size: 12px; line-height: 1.55; }
   .home-about-heading > p:last-child { font-size: 14px; }
   .home-about-copy, .home-about-snapshot { padding: 22px; }
   .home-about-copy h3 { font-size: clamp(36px, 10vw, 48px); }

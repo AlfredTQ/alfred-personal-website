@@ -25,7 +25,7 @@ describe('Home page', () => {
     expect(screen.getByRole('heading', { name: /about me/i })).toBeInTheDocument();
     expect(screen.getByRole('complementary', { name: /areas of practice/i })).toBeInTheDocument();
     const aboutPractice = screen.getByRole('complementary', { name: /areas of practice/i });
-    expect(aboutPractice).toHaveTextContent('Brand & visual systems');
+    expect(aboutPractice).toHaveTextContent('Brand identity & graphic design');
     expect(aboutPractice).toHaveTextContent('Digital strategy');
     expect(aboutPractice).toHaveTextContent('Data storytelling');
     expect(screen.getByRole('link', { name: /explore my capabilities/i })).toHaveAttribute('href', '/#services');
@@ -44,7 +44,7 @@ describe('Home page', () => {
     expect(serviceLinks).toHaveLength(4);
     expect(serviceLinks.every((link) => link.getAttribute('href') === '#contact')).toBe(true);
     const areaOfInterest = screen.getByLabelText('Area of interest') as HTMLSelectElement;
-    for (const [index, title] of ['Brand & visual systems', 'UI/UX design', 'Digital strategy', 'Data storytelling'].entries()) {
+    for (const [index, title] of ['Brand identity & graphic design', 'UI/UX design', 'Digital strategy', 'Data storytelling'].entries()) {
       fireEvent.click(serviceLinks[index]);
       expect(areaOfInterest.value).toBe(title);
     }
@@ -52,6 +52,9 @@ describe('Home page', () => {
     expect([...document.querySelectorAll('.home-service-icon svg')].every((icon) => icon.getAttribute('aria-hidden') === 'true')).toBe(true);
     expect(screen.getByRole('heading', { name: /a few things made with intent/i })).toBeInTheDocument();
     expect(document.querySelectorAll('.concept-work-grid > .concept-work-reveal')).toHaveLength(3);
+    expect(screen.getByRole('heading', { name: /ideas, explored on the page/i })).toBeInTheDocument();
+    expect(document.querySelectorAll('.home-book-card')).toHaveLength(4);
+    expect(screen.getByRole('link', { name: /ask me about my books/i })).toHaveAttribute('href', '/#contact');
     expect(screen.getByRole('heading', { name: /my approach/i })).toBeInTheDocument();
     expect(document.querySelectorAll('.process-step-reveal li')).toHaveLength(5);
     expect(document.querySelector('.contact-form-reveal form')).toBeInTheDocument();
@@ -78,6 +81,7 @@ describe('Home page', () => {
       'How I help',
       'Services',
       'Selected work',
+      'Books',
       'Certifications',
       'Contact',
       'Start a conversation ↗',
@@ -87,6 +91,7 @@ describe('Home page', () => {
     expect(screen.getByRole('link', { name: /^About$/ })).toHaveAttribute('href', '/#about');
     expect(screen.getByRole('link', { name: 'How I help' })).toHaveAttribute('href', '/#clarify');
     expect(screen.getByRole('link', { name: 'Selected work' })).toHaveAttribute('href', '/#work');
+    expect(screen.getByRole('link', { name: 'Books' })).toHaveAttribute('href', '/#books');
     expect(screen.getByRole('link', { name: 'Services' })).toHaveAttribute('href', '/#services');
     expect(screen.queryByRole('link', { name: 'Process' })).not.toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Certifications' })).toHaveAttribute('href', '/#credentials');

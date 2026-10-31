@@ -7,7 +7,7 @@ import { ConceptStudyGrid } from '@/components/concept-study-grid';
 import { Logo } from '@/components/logo';
 import { SiteHeader } from '@/components/site-header';
 import { HeroMotion, Reveal, ScrollProgress } from '@/components/live-experience';
-import { credentials, services } from '@/lib/content';
+import { books, credentials, services } from '@/lib/content';
 
 function CapabilityIcon({ index }: { index: number }) {
   const commonProps = {
@@ -60,7 +60,7 @@ export default function Home() {
       <div className="reference-stage">
         <HeroMotion>
           <div className="hero-copy">
-            <p className="eyebrow"><span />Brand &amp; visual systems · UI/UX design · Digital strategy · Data storytelling</p>
+            <p className="eyebrow"><span />Brand identity &amp; graphic design · UI/UX design · Digital strategy · Data storytelling</p>
             <h1>Design clarity<br />that moves<br /><em>work forward.</em></h1>
             <p className="lede">I help ambitious organisations build clear brands, useful digital experiences, thoughtful digital strategies—including social content—and decision-ready data stories.</p>
             <div className="hero-actions"><Link href="/#work" className="text-action">View selected work <span>↗</span></Link><Link href="/#about" className="text-action">About me <span>↗</span></Link></div>
@@ -70,7 +70,7 @@ export default function Home() {
             <span className="hero-name-layer" aria-hidden="true">ALFRED</span>
             <Image className="hero-person" src="/images/alfred-hero-shoulders.png" alt="Alfred Tackie-Quaye, Creative Designer and Data Analyst" fill priority sizes="(max-width: 800px) 100vw, 58vw" />
             <div className="hero-people" aria-label="Available for selected collaborations"><span>Available for projects</span><b>Open</b></div>
-            <div className="hero-card hero-card-design"><span>Brand &amp; visual systems</span><strong>Make the right idea recognisable</strong><i>↗</i></div>
+            <div className="hero-card hero-card-design"><span>Brand identity &amp; graphic design</span><strong>Make the right idea recognisable</strong><i>↗</i></div>
             <div className="hero-card hero-card-experience"><span>Digital experience</span><strong>Make the next step easier</strong><i>↗</i></div>
             <div className="hero-card hero-card-insight"><b>03</b><span>Make the signal in your data easier to act on.</span></div>
             <figcaption><span>Alfred Tackie-Quaye</span><span>Based in Ghana · Available worldwide</span></figcaption>
@@ -121,7 +121,7 @@ export default function Home() {
             <Reveal className="home-about-copy">
               <Reveal><p className="section-label">Designer. Analyst.</p><h3>Clarity builder.</h3></Reveal>
               <Reveal className="home-about-story">
-                <p>I’m Alfred Tackie-Quaye, a Ghana-based creative and data professional working across brand and visual systems, UI/UX design, digital strategy, and data storytelling.</p>
+                <p>I’m Alfred Tackie-Quaye, a Ghana-based creative and data professional working across brand identity and graphic design, UI/UX design, digital strategy, and data storytelling.</p>
                 <p>I bring visual thinking and evidence-informed problem solving together to make ideas easier to understand, experiences easier to use, and information easier to act on.</p>
                 <Link href="/#services" className="text-action">Explore my capabilities <span>↗</span></Link>
               </Reveal>
@@ -133,7 +133,7 @@ export default function Home() {
             <aside className="home-about-snapshot" aria-label="Areas of practice">
               <p className="section-label">Areas of practice</p>
               <ul>
-                <li><span>01</span><div><strong>Brand &amp; visual systems</strong><small>Identity, campaigns &amp; communication</small></div></li>
+                <li><span>01</span><div><strong>Brand identity &amp; graphic design</strong><small>Identity, campaigns &amp; communication</small></div></li>
                 <li><span>02</span><div><strong>UI/UX design</strong><small>Digital experiences shaped around real tasks</small></div></li>
                 <li><span>03</span><div><strong>Digital strategy</strong><small>Channel planning &amp; social content direction</small></div></li>
                 <li><span>04</span><div><strong>Data storytelling</strong><small>Power BI &amp; decision-ready insights</small></div></li>
@@ -148,7 +148,7 @@ export default function Home() {
         <div className="shell">
           <Reveal className="proof-intro"><p className="section-label">How I help</p><h2 id="proof-title">Make it easier to<br /><em>recognise, use, and act on.</em></h2><p>Good work should do more than look polished. It should help the right people understand the message, move through the experience, and make the next decision with confidence.</p></Reveal>
           <div className="proof-grid">
-            <Reveal className="proof-tile"><article><span>01</span><i className="proof-art" aria-hidden="true" /><h3>Make it recognisable.</h3><p>Brand and visual systems that give an organisation a clear, consistent presence.</p></article></Reveal>
+            <Reveal className="proof-tile"><article><span>01</span><i className="proof-art" aria-hidden="true" /><h3>Make it recognisable.</h3><p>Brand identity and graphic design that give an organisation a clear, consistent presence.</p></article></Reveal>
             <Reveal className="proof-tile"><article><span>02</span><i className="proof-art" aria-hidden="true" /><h3>Make it easier to use.</h3><p>Digital experiences shaped around the tasks people are actually trying to complete.</p></article></Reveal>
             <Reveal className="proof-tile"><article><span>03</span><i className="proof-art" aria-hidden="true" /><h3>Make it easier to act on.</h3><p>Data stories that help information become a useful next move.</p></article></Reveal>
           </div>
@@ -166,6 +166,33 @@ export default function Home() {
       <section className="work-section" id="work">
         <Reveal className="shell work-intro"><p className="section-label">Selected projects</p><p className="work-index">01 — 02 — 03</p><h2>A few things<br /><em>made with intent.</em></h2><div><p>These concept studies show how I approach a brief—from a clearer identity, to a more useful journey, to information people can act on.</p><p className="work-status">Concept studies · Real case studies coming next</p></div></Reveal>
         <ConceptStudyGrid />
+      </section>
+
+      <section className="home-books" id="books" aria-labelledby="books-title">
+        <div className="shell">
+          <Reveal className="home-books-intro">
+            <p className="section-label">Books &amp; writing</p>
+            <h2 id="books-title">Ideas, explored<br /><em>on the page.</em></h2>
+            <p>Alongside design and data, I write practical guides on AI, productivity, and purpose.</p>
+          </Reveal>
+          <div className="home-book-grid">
+            {books.map((book) => (
+              <Reveal className="home-book-reveal" key={book.title}>
+                <article className="home-book-card">
+                  <div className="home-book-cover">
+                    <Image src={book.image} alt={`${book.title} book cover`} fill sizes="(max-width: 560px) 50vw, (max-width: 1000px) 50vw, 25vw" />
+                  </div>
+                  <div className="home-book-copy">
+                    <p>Written by Alfred Tackie-Quaye</p>
+                    <h3>{book.title}</h3>
+                    <span>{book.description}</span>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+          <Link href="/#contact" className="home-books-link">Ask me about my books <span>↗</span></Link>
+        </div>
       </section>
 
       <section className="home-practice">
